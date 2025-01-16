@@ -1,3 +1,4 @@
+import { StrictMode } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -16,29 +17,27 @@ import TutorialsPage from "./pages/Tutorials";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <Navigation />
-          <div className="pt-16">
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/study/uk" element={<UKStudy />} />
-              <Route path="/study/canada" element={<CanadaStudy />} />
-              <Route path="/study/europe" element={<EuropeStudy />} />
-              <Route path="/study/australia" element={<AustraliaStudy />} />
-              <Route path="/study/usa" element={<USAStudy />} />
-              <Route path="/tourism-conferences" element={<TourismConferences />} />
-              <Route path="/tutorials" element={<TutorialsPage />} />
-            </Routes>
-          </div>
-        </TooltipProvider>
-      </BrowserRouter>
-    </QueryClientProvider>
-  </StrictMode>
+  <QueryClientProvider client={queryClient}>
+    <BrowserRouter>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <Navigation />
+        <div className="pt-16">
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/study/uk" element={<UKStudy />} />
+            <Route path="/study/canada" element={<CanadaStudy />} />
+            <Route path="/study/europe" element={<EuropeStudy />} />
+            <Route path="/study/australia" element={<AustraliaStudy />} />
+            <Route path="/study/usa" element={<USAStudy />} />
+            <Route path="/tourism-conferences" element={<TourismConferences />} />
+            <Route path="/tutorials" element={<TutorialsPage />} />
+          </Routes>
+        </div>
+      </TooltipProvider>
+    </BrowserRouter>
+  </QueryClientProvider>
 );
 
 export default App;
