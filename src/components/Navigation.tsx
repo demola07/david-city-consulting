@@ -1,6 +1,7 @@
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, NavigationMenuContent } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
+import { GraduationCap, Globe, BookOpen } from "lucide-react";
 
 const destinations = [
   {
@@ -32,37 +33,43 @@ const destinations = [
 
 const Navigation = () => {
   return (
-    <NavigationMenu className="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg">
+    <NavigationMenu className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b">
       <div className="container mx-auto px-6 h-16 flex items-center justify-between">
-        <Link to="/" className="font-bold text-2xl text-[#8B5CF6] transition-colors duration-200">
-          Study Abroad
+        <Link to="/" className="flex items-center space-x-2 group">
+          <div className="bg-gradient-to-r from-purple-600 to-indigo-600 p-2 rounded-lg transform transition-transform group-hover:scale-105">
+            <GraduationCap className="h-6 w-6 text-white" />
+          </div>
+          <span className="font-bold text-xl bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
+            EduGlobal
+          </span>
         </Link>
         
-        <div className="flex items-center space-x-6">
+        <div className="flex items-center space-x-4">
           <NavigationMenuList>
             <NavigationMenuItem>
               <NavigationMenuTrigger 
-                className="bg-[#8B5CF6] text-white font-medium px-6 py-2 rounded-full shadow-md transition-transform duration-200 active:scale-95"
+                className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-medium px-4 py-2 rounded-full shadow-md hover:shadow-lg transition-all duration-200"
               >
+                <Globe className="w-4 h-4 mr-2 inline-block" />
                 Study Destinations
               </NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-4 p-6 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white rounded-xl shadow-xl">
+                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white rounded-xl shadow-xl">
                   {destinations.map((destination) => (
                     <li key={destination.href}>
                       <NavigationMenuLink asChild>
                         <Link
                           to={destination.href}
                           className={cn(
-                            "block space-y-1 rounded-lg p-4 leading-none no-underline outline-none transition-colors",
-                            "bg-white hover:bg-[#F5F3FF] border border-gray-100",
-                            "active:scale-[0.98] active:bg-[#EDE9FE]"
+                            "flex flex-col space-y-1 rounded-lg p-3 leading-none no-underline outline-none transition-colors",
+                            "hover:bg-gradient-to-r hover:from-purple-50 hover:to-indigo-50 border border-gray-100",
+                            "active:scale-[0.98]"
                           )}
                         >
-                          <div className="text-base font-semibold leading-none text-[#6D28D9]">
+                          <div className="text-base font-semibold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
                             {destination.title}
                           </div>
-                          <p className="mt-2 text-sm leading-snug text-gray-600">
+                          <p className="line-clamp-2 text-sm text-gray-600">
                             {destination.description}
                           </p>
                         </Link>
@@ -76,8 +83,9 @@ const Navigation = () => {
             <NavigationMenuItem>
               <Link 
                 to="/tourism-conferences"
-                className="inline-flex items-center justify-center px-6 py-2 font-medium text-white rounded-full shadow-md transition-all duration-200 active:scale-95 bg-gradient-to-r from-[#F97316] to-[#FB923C] hover:from-[#F97316] hover:to-[#FB923C] hover:shadow-lg"
+                className="inline-flex items-center justify-center px-4 py-2 font-medium text-white rounded-full shadow-md transition-all duration-200 hover:shadow-lg bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600"
               >
+                <Globe className="w-4 h-4 mr-2" />
                 Tourism & Conferences
               </Link>
             </NavigationMenuItem>
@@ -85,8 +93,9 @@ const Navigation = () => {
             <NavigationMenuItem>
               <Link 
                 to="/tutorials"
-                className="inline-flex items-center justify-center px-6 py-2 font-medium text-white rounded-full shadow-md transition-all duration-200 active:scale-95 bg-gradient-to-r from-[#2DD4BF] to-[#14B8A6] hover:shadow-lg"
+                className="inline-flex items-center justify-center px-4 py-2 font-medium text-white rounded-full shadow-md transition-all duration-200 hover:shadow-lg bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-600 hover:to-emerald-600"
               >
+                <BookOpen className="w-4 h-4 mr-2" />
                 Tutorials
               </Link>
             </NavigationMenuItem>
