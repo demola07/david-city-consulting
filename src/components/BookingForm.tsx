@@ -6,6 +6,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useToast } from "@/components/ui/use-toast";
+import { Button } from "@/components/ui/button";
+import { X } from "lucide-react";
 
 interface BookingFormProps {
   isOpen: boolean;
@@ -38,8 +40,8 @@ const BookingForm = ({ isOpen, onClose }: BookingFormProps) => {
 
   return (
     <Sheet open={isOpen} onOpenChange={onClose}>
-      <SheetContent side="right" className="w-[50vw] overflow-y-auto">
-        <div className="mx-auto w-full max-w-2xl">
+      <SheetContent side="right" className="w-[75vw] overflow-y-auto">
+        <div className="mx-auto w-full max-w-4xl">
           <SheetHeader>
             <SheetTitle className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
               Book Your Appointment
@@ -157,14 +159,22 @@ const BookingForm = ({ isOpen, onClose }: BookingFormProps) => {
                 />
               </div>
 
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                type="submit"
-                className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
-              >
-                Submit Booking
-              </motion.button>
+              <div className="flex justify-end space-x-4 mt-6">
+                <Button
+                  type="button"
+                  variant="outline"
+                  onClick={onClose}
+                  className="px-6"
+                >
+                  Cancel
+                </Button>
+                <Button
+                  type="submit"
+                  className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6"
+                >
+                  Submit Booking
+                </Button>
+              </div>
             </form>
           </div>
         </div>
