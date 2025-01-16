@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Calendar, Clock, Globe, GraduationCap, Languages, Calculator, BookOpen, Flask } from "lucide-react";
+import { Calendar, Clock, Globe, GraduationCap, Languages, Calculator, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const tutorialCategories = [
@@ -43,7 +43,7 @@ const tutorialCategories = [
   {
     title: "Sciences",
     description: "Physics, Chemistry, and Biology tutorials",
-    icon: Flask,
+    icon: BookOpen,
     color: "text-teal-500"
   }
 ];
