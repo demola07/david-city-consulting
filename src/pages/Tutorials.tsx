@@ -1,56 +1,84 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Clock, Globe, GraduationCap, Languages, Calculator, BookOpen } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import TutorialBookingForm from "@/components/TutorialBookingForm";
 import BookingButton from "@/components/BookingButton";
 
-const tutorialCategories = [
-  {
-    title: "IELTS Preparation",
-    description: "Comprehensive IELTS training covering all test sections",
-    icon: Languages,
-    color: "text-blue-500"
-  },
-  {
-    title: "Common Entrance",
-    description: "Preparation for various common entrance examinations",
-    icon: GraduationCap,
-    color: "text-purple-500"
-  },
-  {
-    title: "PUTME",
-    description: "Post-UTME preparation for Nigerian universities",
-    icon: BookOpen,
-    color: "text-green-500"
-  },
-  {
-    title: "Languages",
-    description: "Learn multiple languages with native speakers",
-    icon: Globe,
-    color: "text-red-500"
-  },
-  {
-    title: "Literature",
-    description: "In-depth study of various literary works and analysis",
-    icon: BookOpen,
-    color: "text-yellow-500"
-  },
-  {
-    title: "Mathematics",
-    description: "From basic to advanced mathematics concepts",
-    icon: Calculator,
-    color: "text-indigo-500"
-  },
-  {
-    title: "Sciences",
-    description: "Physics, Chemistry, and Biology tutorials",
-    icon: BookOpen,
-    color: "text-teal-500"
+// This would typically come from an API, but for now we'll use localStorage
+const getTutorialCategories = () => {
+  const storedCategories = localStorage.getItem("tutorialCategories");
+  if (!storedCategories) {
+    return [
+      {
+        title: "IELTS Preparation",
+        description: "Comprehensive IELTS training covering all test sections",
+        icon: Languages,
+        color: "text-blue-500"
+      },
+      {
+        title: "Common Entrance",
+        description: "Preparation for various common entrance examinations",
+        icon: GraduationCap,
+        color: "text-purple-500"
+      },
+      {
+        title: "PUTME",
+        description: "Post-UTME preparation for Nigerian universities",
+        icon: BookOpen,
+        color: "text-green-500"
+      },
+      {
+        title: "Languages",
+        description: "Learn multiple languages with native speakers",
+        icon: Globe,
+        color: "text-red-500"
+      },
+      {
+        title: "Literature",
+        description: "In-depth study of various literary works and analysis",
+        icon: BookOpen,
+        color: "text-yellow-500"
+      },
+      {
+        title: "Mathematics",
+        description: "From basic to advanced mathematics concepts",
+        icon: Calculator,
+        color: "text-indigo-500"
+      },
+      {
+        title: "Sciences",
+        description: "Physics, Chemistry, and Biology tutorials",
+        icon: BookOpen,
+        color: "text-teal-500"
+      }
+    ];
   }
-];
+  return JSON.parse(storedCategories);
+};
 
 const TutorialsPage = () => {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const [tutorialCategories, setTutorialCategories] = useState(getTutorialCategories());
+
+  useEffect(() => {
+    const handleStorageChange = () => {
+      setTutorialCategories(getTutorialCategories());
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+    return () => window.removeEventListener('storage', handleStorageChange);
+  }, []);
+
+  const getIconComponent = (iconName: string) => {
+    const icons = {
+      Languages,
+      GraduationCap,
+      BookOpen,
+      Globe,
+      Calculator
+    };
+    return icons[iconName as keyof typeof icons] || BookOpen;
+  };
 
   return (
     <>
@@ -65,12 +93,14 @@ const TutorialsPage = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {tutorialCategories.map((category) => (
-            <Card key={category.title} className="group hover:shadow-lg transition-shadow duration-300">
+          {tutorialCategories.map((category, index) => (
+            <Card key={index} className="group hover:shadow-lg transition-shadow duration-300">
               <CardHeader>
                 <div className="flex items-center gap-4">
                   <div className={`p-3 rounded-lg ${category.color} bg-opacity-10`}>
-                    <category.icon className={`h-6 w-6 ${category.color}`} />
+                    {React.createElement(getIconComponent(category.icon.name), {
+                      className: `h-6 w-6 ${category.color}`
+                    })}
                   </div>
                   <div>
                     <CardTitle className="text-xl">{category.title}</CardTitle>

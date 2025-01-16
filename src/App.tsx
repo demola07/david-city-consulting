@@ -13,6 +13,9 @@ import AustraliaStudy from "./pages/study/AustraliaStudy";
 import USAStudy from "./pages/study/USAStudy";
 import TourismConferences from "./pages/TourismConferences";
 import TutorialsPage from "./pages/Tutorials";
+import AdminLayout from "./pages/admin/AdminLayout";
+import Login from "./pages/admin/Login";
+import TutorialManagement from "./pages/admin/TutorialManagement";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +36,12 @@ const App = () => (
             <Route path="/study/usa" element={<USAStudy />} />
             <Route path="/tourism-conferences" element={<TourismConferences />} />
             <Route path="/tutorials" element={<TutorialsPage />} />
+            
+            {/* Admin Routes */}
+            <Route path="/admin/login" element={<Login />} />
+            <Route path="/admin" element={<AdminLayout />}>
+              <Route path="tutorials" element={<TutorialManagement />} />
+            </Route>
           </Routes>
         </div>
       </TooltipProvider>
