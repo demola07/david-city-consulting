@@ -9,7 +9,7 @@ const Hero = () => {
           alt="Hero background"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/60" /> {/* Increased overlay opacity for better contrast */}
       </div>
       
       <div className="container relative z-10 px-4 text-center">
@@ -19,19 +19,19 @@ const Hero = () => {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mx-auto"
         >
-          <span className="inline-block px-4 py-1.5 mb-4 text-sm font-medium text-primary-500 bg-white rounded-full">
+          <span className="inline-block px-4 py-1.5 mb-4 text-sm font-semibold bg-primary text-white rounded-full shadow-lg">
             Your Journey Begins Here
           </span>
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">
             Transform Your Future with International Education
           </h1>
-          <p className="text-lg md:text-xl text-white/90 mb-8">
+          <p className="text-lg md:text-xl text-white mb-8 drop-shadow-md">
             Expert guidance for studying abroad, tourism, and educational services
           </p>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 bg-primary text-white font-medium rounded-lg shadow-lg hover:bg-primary-hover transition-colors"
+            className="px-8 py-3 bg-[#8B5CF6] hover:bg-[#7C3AED] text-white font-semibold rounded-lg shadow-xl transition-colors"
           >
             Get Started
           </motion.button>
