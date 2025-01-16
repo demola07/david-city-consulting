@@ -10,6 +10,7 @@ import CanadaStudy from "./pages/study/CanadaStudy";
 import EuropeStudy from "./pages/study/EuropeStudy";
 import AustraliaStudy from "./pages/study/AustraliaStudy";
 import USAStudy from "./pages/study/USAStudy";
+import TourismConferences from "./pages/TourismConferences";
 
 const queryClient = new QueryClient();
 
@@ -20,7 +21,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Navigation />
-        <div className="pt-16"> {/* Add padding to account for fixed navigation */}
+        <div className="pt-16">
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/study/uk" element={<UKStudy />} />
@@ -28,6 +29,7 @@ const App = () => (
             <Route path="/study/europe" element={<EuropeStudy />} />
             <Route path="/study/australia" element={<AustraliaStudy />} />
             <Route path="/study/usa" element={<USAStudy />} />
+            <Route path="/tourism-conferences" element={<TourismConferences />} />
           </Routes>
         </div>
       </BrowserRouter>
