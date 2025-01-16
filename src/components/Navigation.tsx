@@ -81,6 +81,15 @@ const Navigation = () => {
                 Tourism & Conferences
               </Link>
             </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <Link 
+                to="/tutorials"
+                className="inline-flex items-center justify-center px-6 py-2 font-medium text-white rounded-full shadow-md transition-all duration-200 active:scale-95 bg-gradient-to-r from-[#2DD4BF] to-[#14B8A6] hover:shadow-lg"
+              >
+                Tutorials
+              </Link>
+            </NavigationMenuItem>
           </NavigationMenuList>
         </div>
       </div>

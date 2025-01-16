@@ -11,6 +11,7 @@ import EuropeStudy from "./pages/study/EuropeStudy";
 import AustraliaStudy from "./pages/study/AustraliaStudy";
 import USAStudy from "./pages/study/USAStudy";
 import TourismConferences from "./pages/TourismConferences";
+import TutorialsPage from "./pages/Tutorials";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,7 @@ const App = () => (
             <Route path="/study/australia" element={<AustraliaStudy />} />
             <Route path="/study/usa" element={<USAStudy />} />
             <Route path="/tourism-conferences" element={<TourismConferences />} />
+            <Route path="/tutorials" element={<TutorialsPage />} />
           </Routes>
         </div>
       </BrowserRouter>
