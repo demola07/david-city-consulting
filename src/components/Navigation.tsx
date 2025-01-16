@@ -34,9 +34,9 @@ const destinations = [
 const Navigation = () => {
   return (
     <NavigationMenu className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b">
-      <div className="w-full max-w-[2000px] mx-auto px-8 h-20 flex items-center justify-between">
-        <Link to="/" className="flex items-center space-x-3 group relative z-10">
-          <div className="bg-gradient-to-r from-purple-600 to-indigo-600 p-2.5 rounded-lg transform transition-transform group-hover:scale-105">
+      <div className="w-full px-4 md:px-8 lg:px-12 h-20 flex items-center justify-between">
+        <Link to="/" className="flex items-center space-x-4 group relative z-10">
+          <div className="bg-gradient-to-r from-purple-600 to-indigo-600 p-3 rounded-lg transform transition-transform group-hover:scale-105">
             <GraduationCap className="h-7 w-7 text-white" />
           </div>
           <span className="font-bold text-2xl bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
@@ -44,11 +44,11 @@ const Navigation = () => {
           </span>
         </Link>
         
-        <div className="flex items-center space-x-6">
-          <NavigationMenuList>
-            <NavigationMenuItem className="mr-4">
+        <div className="flex items-center space-x-8">
+          <NavigationMenuList className="space-x-6">
+            <NavigationMenuItem>
               <NavigationMenuTrigger 
-                className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-medium px-6 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all duration-200"
+                className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-medium px-8 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all duration-200"
               >
                 <Globe className="w-4 h-4 mr-2 inline-block" />
                 Study Destinations
@@ -83,17 +83,17 @@ const Navigation = () => {
             <NavigationMenuItem>
               <Link 
                 to="/tourism-conferences"
-                className="inline-flex items-center justify-center px-6 py-2.5 font-medium text-white rounded-full shadow-md transition-all duration-200 hover:shadow-lg bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600"
+                className="inline-flex items-center justify-center px-8 py-2.5 font-medium text-white rounded-full shadow-md transition-all duration-200 hover:shadow-lg bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600"
               >
                 <Globe className="w-4 h-4 mr-2" />
                 Tourism & Conferences
               </Link>
             </NavigationMenuItem>
 
-            <NavigationMenuItem className="ml-4">
+            <NavigationMenuItem>
               <Link 
                 to="/tutorials"
-                className="inline-flex items-center justify-center px-6 py-2.5 font-medium text-white rounded-full shadow-md transition-all duration-200 hover:shadow-lg bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-600 hover:to-emerald-600"
+                className="inline-flex items-center justify-center px-8 py-2.5 font-medium text-white rounded-full shadow-md transition-all duration-200 hover:shadow-lg bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-600 hover:to-emerald-600"
               >
                 <BookOpen className="w-4 h-4 mr-2" />
                 Tutorials
