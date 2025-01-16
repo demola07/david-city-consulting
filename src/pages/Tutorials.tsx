@@ -1,9 +1,8 @@
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Calendar, Clock, Globe, GraduationCap, Languages, Calculator, BookOpen } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Clock, Globe, GraduationCap, Languages, Calculator, BookOpen } from "lucide-react";
 import { useState } from "react";
 import TutorialBookingForm from "@/components/TutorialBookingForm";
+import BookingButton from "@/components/BookingButton";
 
 const tutorialCategories = [
   {
@@ -80,14 +79,9 @@ const TutorialsPage = () => {
                 </div>
               </CardHeader>
               <CardContent>
-                <div className="flex justify-between items-center">
-                  <div className="flex items-center gap-2 text-sm text-gray-500">
-                    <Clock className="h-4 w-4" />
-                    <span>Flexible Timing</span>
-                  </div>
-                  <Button onClick={() => setIsBookingOpen(true)}>
-                    Book Session
-                  </Button>
+                <div className="flex items-center gap-2 text-sm text-gray-500">
+                  <Clock className="h-4 w-4" />
+                  <span>Flexible Timing</span>
                 </div>
               </CardContent>
             </Card>
@@ -109,7 +103,7 @@ const TutorialsPage = () => {
               </div>
               <div className="flex flex-col items-center">
                 <div className="p-3 rounded-full bg-teal-100 mb-4">
-                  <Calendar className="h-6 w-6 text-teal-600" />
+                  <Clock className="h-6 w-6 text-teal-600" />
                 </div>
                 <h3 className="font-semibold mb-2">Flexible Schedule</h3>
                 <p className="text-sm text-gray-600">Choose times that work best for you</p>
@@ -126,6 +120,7 @@ const TutorialsPage = () => {
         </div>
       </div>
       
+      <BookingButton onClick={() => setIsBookingOpen(true)} />
       <TutorialBookingForm isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
     </>
   );

@@ -10,7 +10,7 @@ const BookingButton = ({ onClick }: { onClick: () => void }) => {
       className="fixed bottom-8 right-8 z-50 bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-4 rounded-full shadow-lg hover:shadow-xl flex items-center space-x-2 animate-bounce"
     >
       <Calendar className="w-5 h-5" />
-      <span className="font-semibold">Book Appointment</span>
+      <span className="font-semibold">Book Tutorial</span>
     </motion.button>
   );
 };
