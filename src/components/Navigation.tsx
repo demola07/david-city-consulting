@@ -1,5 +1,4 @@
-import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, NavigationMenuContent } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
 
@@ -28,29 +27,6 @@ const destinations = [
     title: "USA",
     href: "/study/usa",
     description: "Leading research institutions and innovative programs"
-  }
-];
-
-const tourismDestinations = [
-  {
-    title: "Paris, France",
-    description: "Experience the city of lights and romance",
-    image: "https://images.unsplash.com/photo-1472396961693-142e6e269027"
-  },
-  {
-    title: "Tokyo, Japan",
-    description: "Immerse in culture and technology",
-    image: "https://images.unsplash.com/photo-1433086966358-54859d0ed716"
-  },
-  {
-    title: "Dubai, UAE",
-    description: "Luxury conferences and modern architecture",
-    image: "https://images.unsplash.com/photo-1504893524553-b855bce32c67"
-  },
-  {
-    title: "Singapore",
-    description: "Leading business conference destination",
-    image: "https://images.unsplash.com/photo-1500673922987-e212871fec22"
   }
 ];
 
@@ -96,86 +72,14 @@ const Navigation = () => {
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>
-          </NavigationMenuList>
 
-          <NavigationMenuList>
             <NavigationMenuItem>
-              <NavigationMenuTrigger 
-                className="bg-gradient-to-r from-[#FF6B6B] to-[#FF8E53] text-white font-medium px-6 py-2 rounded-full shadow-md transition-transform duration-200 active:scale-95"
+              <Link 
+                to="/tourism-conferences"
+                className="inline-flex items-center justify-center px-6 py-2 font-medium text-white rounded-full shadow-md transition-all duration-200 active:scale-95 bg-gradient-to-r from-[#F97316] to-[#FB923C] hover:from-[#F97316] hover:to-[#FB923C] hover:shadow-lg"
               >
                 Tourism & Conferences
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <div className="w-[800px] p-6 bg-white rounded-xl shadow-xl">
-                  <h3 className="text-xl font-semibold mb-6 text-gray-900">Popular Destinations</h3>
-                  <Carousel className="w-full mb-8">
-                    <CarouselContent>
-                      {tourismDestinations.map((destination, index) => (
-                        <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 pl-4">
-                          <div className="relative overflow-hidden rounded-xl shadow-md group">
-                            <img
-                              src={destination.image}
-                              alt={destination.title}
-                              className="w-full h-48 object-cover"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-4 flex flex-col justify-end">
-                              <h4 className="text-white font-semibold text-lg">{destination.title}</h4>
-                              <p className="text-white/90 text-sm">{destination.description}</p>
-                            </div>
-                          </div>
-                        </CarouselItem>
-                      ))}
-                    </CarouselContent>
-                    <CarouselPrevious className="left-2" />
-                    <CarouselNext className="right-2" />
-                  </Carousel>
-
-                  <div className="grid grid-cols-2 gap-6">
-                    <div className="space-y-3 bg-gray-50 p-4 rounded-xl border border-gray-100">
-                      <h4 className="font-semibold text-gray-900 text-lg">Tourism</h4>
-                      <ul className="space-y-2 text-sm text-gray-600">
-                        <li className="flex items-center space-x-2">
-                          <span className="w-1.5 h-1.5 bg-[#FF6B6B] rounded-full"></span>
-                          <span>Guided Tours</span>
-                        </li>
-                        <li className="flex items-center space-x-2">
-                          <span className="w-1.5 h-1.5 bg-[#FF6B6B] rounded-full"></span>
-                          <span>Cultural Experiences</span>
-                        </li>
-                        <li className="flex items-center space-x-2">
-                          <span className="w-1.5 h-1.5 bg-[#FF6B6B] rounded-full"></span>
-                          <span>Adventure Travel</span>
-                        </li>
-                        <li className="flex items-center space-x-2">
-                          <span className="w-1.5 h-1.5 bg-[#FF6B6B] rounded-full"></span>
-                          <span>Luxury Getaways</span>
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="space-y-3 bg-gray-50 p-4 rounded-xl border border-gray-100">
-                      <h4 className="font-semibold text-gray-900 text-lg">Conferences</h4>
-                      <ul className="space-y-2 text-sm text-gray-600">
-                        <li className="flex items-center space-x-2">
-                          <span className="w-1.5 h-1.5 bg-[#FF8E53] rounded-full"></span>
-                          <span>Business Events</span>
-                        </li>
-                        <li className="flex items-center space-x-2">
-                          <span className="w-1.5 h-1.5 bg-[#FF8E53] rounded-full"></span>
-                          <span>Tech Summits</span>
-                        </li>
-                        <li className="flex items-center space-x-2">
-                          <span className="w-1.5 h-1.5 bg-[#FF8E53] rounded-full"></span>
-                          <span>Academic Conferences</span>
-                        </li>
-                        <li className="flex items-center space-x-2">
-                          <span className="w-1.5 h-1.5 bg-[#FF8E53] rounded-full"></span>
-                          <span>Trade Shows</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </NavigationMenuContent>
+              </Link>
             </NavigationMenuItem>
           </NavigationMenuList>
         </div>
