@@ -1,3 +1,4 @@
+import React from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Clock, Globe, GraduationCap, Languages, Calculator, BookOpen } from "lucide-react";
 import { useState, useEffect } from "react";
