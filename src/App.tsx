@@ -16,27 +16,29 @@ import TutorialsPage from "./pages/Tutorials";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
+  <StrictMode>
+    <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <Navigation />
-        <div className="pt-16">
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/study/uk" element={<UKStudy />} />
-            <Route path="/study/canada" element={<CanadaStudy />} />
-            <Route path="/study/europe" element={<EuropeStudy />} />
-            <Route path="/study/australia" element={<AustraliaStudy />} />
-            <Route path="/study/usa" element={<USAStudy />} />
-            <Route path="/tourism-conferences" element={<TourismConferences />} />
-            <Route path="/tutorials" element={<TutorialsPage />} />
-          </Routes>
-        </div>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <Navigation />
+          <div className="pt-16">
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/study/uk" element={<UKStudy />} />
+              <Route path="/study/canada" element={<CanadaStudy />} />
+              <Route path="/study/europe" element={<EuropeStudy />} />
+              <Route path="/study/australia" element={<AustraliaStudy />} />
+              <Route path="/study/usa" element={<USAStudy />} />
+              <Route path="/tourism-conferences" element={<TourismConferences />} />
+              <Route path="/tutorials" element={<TutorialsPage />} />
+            </Routes>
+          </div>
+        </TooltipProvider>
       </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+    </QueryClientProvider>
+  </StrictMode>
 );
 
 export default App;
