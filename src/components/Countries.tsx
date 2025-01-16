@@ -20,11 +20,11 @@ const countries = [
 
 const Countries = () => {
   return (
-    <section className="py-20">
+    <section className="py-20 bg-white">
       <div className="container px-4">
         <div className="text-center mb-16">
-          <span className="text-primary font-medium">Featured Destinations</span>
-          <h2 className="text-3xl md:text-4xl font-bold mt-2">Study Abroad Destinations</h2>
+          <span className="text-[#8B5CF6] font-semibold">Featured Destinations</span>
+          <h2 className="text-3xl md:text-4xl font-bold mt-2 text-gray-900">Study Abroad Destinations</h2>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -35,7 +35,7 @@ const Countries = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="group relative overflow-hidden rounded-2xl"
+              className="group relative overflow-hidden rounded-2xl shadow-xl"
             >
               <div className="aspect-w-3 aspect-h-4">
                 <img
@@ -44,9 +44,9 @@ const Countries = () => {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
-                <h3 className="text-xl font-semibold text-white mb-2">{country.name}</h3>
-                <p className="text-white/80 text-sm">{country.description}</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent flex flex-col justify-end p-6">
+                <h3 className="text-2xl font-bold text-white mb-3 drop-shadow-lg">{country.name}</h3>
+                <p className="text-white text-base font-medium drop-shadow-md">{country.description}</p>
               </div>
             </motion.div>
           ))}
