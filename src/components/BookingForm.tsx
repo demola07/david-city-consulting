@@ -4,10 +4,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
-import { X } from "lucide-react";
 
 interface BookingFormProps {
   isOpen: boolean;
@@ -40,7 +38,7 @@ const BookingForm = ({ isOpen, onClose }: BookingFormProps) => {
 
   return (
     <Sheet open={isOpen} onOpenChange={onClose}>
-      <SheetContent side="right" className="w-full md:w-[300%] lg:w-[360%] overflow-y-auto">
+      <SheetContent side="right" className="w-[70%!important] max-w-[70%!important] overflow-y-auto">
         <div className="mx-auto w-full max-w-[1400px]">
           <SheetHeader>
             <SheetTitle className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
