@@ -40,8 +40,8 @@ const BookingForm = ({ isOpen, onClose }: BookingFormProps) => {
 
   return (
     <Sheet open={isOpen} onOpenChange={onClose}>
-      <SheetContent side="right" className="w-full md:w-1/2 overflow-y-auto">
-        <div className="mx-auto w-full max-w-[1200px]">
+      <SheetContent side="right" className="w-full md:w-[75%] lg:w-[70%] overflow-y-auto">
+        <div className="mx-auto w-full max-w-[1400px]">
           <SheetHeader>
             <SheetTitle className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
               Book Your Appointment
