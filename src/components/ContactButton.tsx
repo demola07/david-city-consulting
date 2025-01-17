@@ -15,7 +15,6 @@ const ContactButton = () => {
   const location = useLocation();
   const path = location.pathname;
 
-  // Only show button on these routes (same as BookingButton)
   if (!['/', '/tourism-conferences', '/study/australia', '/study/canada', '/study/europe', '/study/uk', '/study/usa', '/tutorials'].includes(path)) {
     return null;
   }
@@ -32,27 +31,29 @@ const ContactButton = () => {
           <span className="font-semibold">Contact Us</span>
         </motion.button>
       </SheetTrigger>
-      <SheetContent side="left" className="w-[70%!important] max-w-[70%!important] overflow-y-auto mx-auto">
-        <SheetHeader>
-          <SheetTitle>Contact Us</SheetTitle>
-          <SheetDescription>
-            Choose your preferred messaging platform to get in touch with us.
+      <SheetContent side="left" className="w-[400px] max-w-[90vw] sm:w-[350px]">
+        <SheetHeader className="text-center">
+          <SheetTitle className="text-2xl font-bold bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent">
+            Get in Touch
+          </SheetTitle>
+          <SheetDescription className="text-sm text-gray-600">
+            We're here to help! Choose your preferred platform
           </SheetDescription>
         </SheetHeader>
-        <div className="mt-8 space-y-4">
+        <div className="mt-8 space-y-4 px-2">
           <Button
             onClick={() => window.open('https://wa.me/YOUR_WHATSAPP_NUMBER', '_blank')}
-            className="w-full bg-green-500 hover:bg-green-600 text-white flex items-center justify-center gap-2 h-12"
+            className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white flex items-center justify-center gap-3 h-14 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
           >
-            <MessageCircle className="w-5 h-5" />
-            Chat on WhatsApp
+            <MessageCircle className="w-6 h-6" />
+            <span className="font-medium">WhatsApp</span>
           </Button>
           <Button
             onClick={() => window.open('https://t.me/YOUR_TELEGRAM_USERNAME', '_blank')}
-            className="w-full bg-blue-500 hover:bg-blue-600 text-white flex items-center justify-center gap-2 h-12"
+            className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white flex items-center justify-center gap-3 h-14 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
           >
-            <Send className="w-5 h-5" />
-            Chat on Telegram
+            <Send className="w-6 h-6" />
+            <span className="font-medium">Telegram</span>
           </Button>
         </div>
       </SheetContent>
