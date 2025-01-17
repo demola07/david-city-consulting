@@ -33,7 +33,7 @@ const destinations = [
 
 const Navigation = () => {
   return (
-    <NavigationMenu className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b">
+    <NavigationMenu className="bg-white/95 backdrop-blur-sm border-b">
       <div className="container mx-auto h-24 flex items-center justify-between gap-8 px-6 lg:px-12">
         <Link to="/" className="flex items-center space-x-4 group">
           <div className="bg-gradient-to-r from-purple-600 to-indigo-600 p-3.5 rounded-lg transform transition-transform group-hover:scale-105">

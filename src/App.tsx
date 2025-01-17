@@ -25,24 +25,26 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <Navigation />
-        <div className="pt-16">
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/study/uk" element={<UKStudy />} />
-            <Route path="/study/canada" element={<CanadaStudy />} />
-            <Route path="/study/europe" element={<EuropeStudy />} />
-            <Route path="/study/australia" element={<AustraliaStudy />} />
-            <Route path="/study/usa" element={<USAStudy />} />
-            <Route path="/tourism-conferences" element={<TourismConferences />} />
-            <Route path="/tutorials" element={<TutorialsPage />} />
-            
-            {/* Admin Routes */}
-            <Route path="/admin/login" element={<Login />} />
-            <Route path="/admin" element={<AdminLayout />}>
-              <Route path="tutorials" element={<TutorialManagement />} />
-            </Route>
-          </Routes>
+        <div className="min-h-screen flex flex-col">
+          <Navigation />
+          <main className="flex-1">
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/study/uk" element={<UKStudy />} />
+              <Route path="/study/canada" element={<CanadaStudy />} />
+              <Route path="/study/europe" element={<EuropeStudy />} />
+              <Route path="/study/australia" element={<AustraliaStudy />} />
+              <Route path="/study/usa" element={<USAStudy />} />
+              <Route path="/tourism-conferences" element={<TourismConferences />} />
+              <Route path="/tutorials" element={<TutorialsPage />} />
+              
+              {/* Admin Routes */}
+              <Route path="/admin/login" element={<Login />} />
+              <Route path="/admin" element={<AdminLayout />}>
+                <Route path="tutorials" element={<TutorialManagement />} />
+              </Route>
+            </Routes>
+          </main>
         </div>
       </TooltipProvider>
     </BrowserRouter>
