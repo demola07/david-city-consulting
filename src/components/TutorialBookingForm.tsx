@@ -40,8 +40,8 @@ const TutorialBookingForm = ({ isOpen, onClose }: TutorialBookingFormProps) => {
 
   return (
     <Sheet open={isOpen} onOpenChange={onClose}>
-      <SheetContent side="right" className="w-[90vw] overflow-y-auto">
-        <div className="mx-auto w-full max-w-6xl">
+      <SheetContent side="right" className="w-[70%!important] max-w-[70%!important] overflow-y-auto">
+        <div className="mx-auto w-full max-w-[1400px]">
           <SheetHeader>
             <SheetTitle className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
               Book Your Tutorial Session
