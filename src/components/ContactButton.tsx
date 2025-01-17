@@ -1,4 +1,4 @@
-import { MessageSquare, Telegram, WhatsApp } from "lucide-react";
+import { MessageSquare, MessageCircle, Send } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
 import {
@@ -44,14 +44,14 @@ const ContactButton = () => {
             onClick={() => window.open('https://wa.me/YOUR_WHATSAPP_NUMBER', '_blank')}
             className="w-full bg-green-500 hover:bg-green-600 text-white flex items-center justify-center gap-2 h-12"
           >
-            <WhatsApp className="w-5 h-5" />
+            <MessageCircle className="w-5 h-5" />
             Chat on WhatsApp
           </Button>
           <Button
             onClick={() => window.open('https://t.me/YOUR_TELEGRAM_USERNAME', '_blank')}
             className="w-full bg-blue-500 hover:bg-blue-600 text-white flex items-center justify-center gap-2 h-12"
           >
-            <Telegram className="w-5 h-5" />
+            <Send className="w-5 h-5" />
             Chat on Telegram
           </Button>
         </div>
