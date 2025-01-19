@@ -35,6 +35,11 @@ const destinations = [
 
 const Navigation = () => {
   const isMobile = useIsMobile();
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  const handleNavigation = () => {
+    setIsOpen(false);
+  };
 
   const DestinationsList = () => (
     <ul className="space-y-3">
@@ -42,6 +47,7 @@ const Navigation = () => {
         <li key={destination.href}>
           <Link
             to={destination.href}
+            onClick={handleNavigation}
             className="flex flex-col space-y-1 p-2.5 rounded-lg hover:bg-gradient-to-r hover:from-purple-50 hover:to-indigo-50 border border-gray-100"
           >
             <div className="text-sm font-semibold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
@@ -112,7 +118,7 @@ const Navigation = () => {
   const MobileNav = () => (
     <div className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b">
       <div className="container mx-auto h-16 flex items-center justify-between px-4">
-        <Link to="/" className="flex items-center space-x-2.5">
+        <Link to="/" onClick={handleNavigation} className="flex items-center space-x-2.5">
           <div className="bg-gradient-to-r from-purple-600 to-indigo-600 p-2 rounded-lg">
             <GraduationCap className="h-5 w-5 text-white" />
           </div>
@@ -121,7 +127,7 @@ const Navigation = () => {
           </span>
         </Link>
 
-        <Sheet>
+        <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger className="p-2 hover:bg-gray-100 rounded-lg">
             <Menu className="h-5 w-5" />
           </SheetTrigger>
@@ -143,6 +149,7 @@ const Navigation = () => {
                     <h3 className="text-sm font-medium text-gray-500">Other Services</h3>
                     <Link 
                       to="/tourism-conferences"
+                      onClick={handleNavigation}
                       className="flex items-center space-x-2 w-full p-2.5 font-medium text-white rounded-lg bg-gradient-to-r from-orange-500 to-pink-500"
                     >
                       <Globe className="w-4 h-4" />
@@ -151,6 +158,7 @@ const Navigation = () => {
 
                     <Link 
                       to="/tutorials"
+                      onClick={handleNavigation}
                       className="flex items-center space-x-2 w-full p-2.5 font-medium text-white rounded-lg bg-gradient-to-r from-teal-500 to-emerald-500"
                     >
                       <BookOpen className="w-4 h-4" />
