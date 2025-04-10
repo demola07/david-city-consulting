@@ -1,3 +1,4 @@
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
@@ -6,6 +7,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules';
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 import * as React from 'react';
 
 const HERO_IMAGES = [
@@ -22,34 +25,45 @@ const customSwiperStyles = `
   .hero-swiper .swiper-button-prev {
     color: white;
     background: rgba(0, 0, 0, 0.5);
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 20;
+    transition: all 0.3s ease;
+  }
+  
+  .hero-swiper .swiper-button-next:hover,
+  .hero-swiper .swiper-button-prev:hover {
+    background: rgba(0, 0, 0, 0.7);
+    transform: scale(1.05);
   }
   
   .hero-swiper .swiper-button-next:after,
   .hero-swiper .swiper-button-prev:after {
-    font-size: 20px;
+    font-size: 22px;
   }
   
   .hero-swiper .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
     background: white;
     opacity: 0.7;
+    transition: all 0.3s ease;
   }
   
   .hero-swiper .swiper-pagination-bullet-active {
     background: white;
     opacity: 1;
+    transform: scale(1.2);
   }
 `;
 
 const Hero = () => {
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative h-[100vh] flex items-center justify-center overflow-hidden">
       {/* Add custom styles */}
       <style>{customSwiperStyles}</style>
       
@@ -61,8 +75,9 @@ const Hero = () => {
           slidesPerView={1}
           loop={true}
           effect="fade"
+          speed={1500}
           autoplay={{
-            delay: 4000,
+            delay: 5000,
             disableOnInteraction: false,
           }}
           navigation={{
@@ -80,11 +95,14 @@ const Hero = () => {
         >
           {HERO_IMAGES.map((src, index) => (
             <SwiperSlide key={index}>
-              <img
-                src={src}
-                alt={`Hero background ${index + 1}`}
-                className="w-full h-full object-cover"
-              />
+              <div className="relative h-full">
+                <img
+                  src={src}
+                  alt={`Hero background ${index + 1}`}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
+              </div>
             </SwiperSlide>
           ))}
           
@@ -97,35 +115,90 @@ const Hero = () => {
         </Swiper>
       </div>
       
-      {/* Overlay - Keep it above the images but below the navigation */}
-      <div className="absolute inset-0 z-[11] bg-black/60 pointer-events-none" />
-      
       {/* Text Content - Increased z-index to be above Swiper navigation */}
-      <div className="container relative z-[30] px-4 text-center pointer-events-none">
+      <div className="container relative z-[30] px-4 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
           className="max-w-3xl mx-auto"
         >
-          <span className="inline-block px-4 py-1.5 mb-4 text-sm font-semibold bg-primary text-white rounded-full shadow-lg pointer-events-auto">
-            Your Journey Begins Here
-          </span>
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">
-            Global Education and tourism at its peak.
-          </h1>
-          <p className="text-lg md:text-xl text-white mb-8 drop-shadow-md">
-            The expert guidance for studying abroad, tourism and educational services
-          </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 bg-[#8B5CF6] hover:bg-[#7C3AED] text-white font-semibold rounded-lg shadow-xl transition-colors pointer-events-auto"
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
           >
-            Get Started
-          </motion.button>
+            <span className="inline-block px-5 py-2 mb-6 text-sm font-bold tracking-wider bg-[#8B5CF6] text-white rounded-full shadow-lg uppercase">
+              Your Journey Begins Here
+            </span>
+          </motion.div>
+          
+          <motion.h1 
+            className="text-5xl md:text-7xl font-bold text-white mb-8 drop-shadow-lg leading-tight"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+          >
+            Global Education <span className="text-[#8B5CF6]">&</span> Tourism at its Peak
+          </motion.h1>
+          
+          <motion.p 
+            className="text-xl md:text-2xl text-white/90 mb-10 leading-relaxed max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.5 }}
+          >
+            Expert guidance for studying abroad, tourism and educational services tailored to your dreams and aspirations
+          </motion.p>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.7 }}
+            className="flex flex-wrap gap-4 justify-center"
+          >
+            <Button 
+              size="lg"
+              className="bg-[#8B5CF6] hover:bg-[#7C3AED] text-white px-8 py-6 text-lg font-semibold rounded-lg shadow-xl transition-all hover:translate-y-[-2px]"
+            >
+              Get Started
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+            <Button 
+              variant="outline"
+              size="lg"
+              className="bg-transparent border-2 border-white text-white hover:bg-white/20 px-8 py-6 text-lg font-semibold rounded-lg transition-all"
+            >
+              Learn More
+            </Button>
+          </motion.div>
         </motion.div>
       </div>
+      
+      {/* Scrolldown indicator */}
+      <motion.div 
+        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-30"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 1.5, repeat: Infinity, repeatType: "reverse" }}
+      >
+        <div className="flex flex-col items-center">
+          <span className="text-white text-sm mb-2 font-medium">Scroll Down</span>
+          <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center p-1">
+            <motion.div
+              className="w-1.5 h-1.5 bg-white rounded-full"
+              animate={{ 
+                y: [0, 15, 0],
+              }}
+              transition={{ 
+                duration: 1.5, 
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+          </div>
+        </div>
+      </motion.div>
     </section>
   );
 };
