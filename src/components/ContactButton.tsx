@@ -53,7 +53,7 @@ const ContactButton = () => {
             <span className="font-medium">WhatsApp</span>
           </Button>
           <Button
-            onClick={() => window.open('https://t.me/YOUR_TELEGRAM_USERNAME', '_blank')}
+            onClick={() => window.open('https://t.me/Davidcity01', '_blank')}
             className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white flex items-center justify-center gap-3 h-14 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
           >
             <Send className="w-6 h-6" />
