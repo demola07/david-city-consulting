@@ -1,7 +1,5 @@
 
 import { Card } from "@/components/ui/card";
-import BookingForm from "@/components/BookingForm";
-import { useState } from "react";
 
 const tourismDestinations = [
   {
@@ -27,8 +25,6 @@ const tourismDestinations = [
 ];
 
 const TourismConferences = () => {
-  const [isBookingOpen, setIsBookingOpen] = useState(false);
-
   return (
     <>
       <div className="min-h-screen bg-gradient-to-b from-[#F5F3FF] to-white pt-24">
@@ -100,8 +96,6 @@ const TourismConferences = () => {
           </div>
         </div>
       </div>
-      
-      <BookingForm isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
     </>
   );
 };
