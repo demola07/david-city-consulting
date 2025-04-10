@@ -8,7 +8,7 @@ import Navigation from "./components/Navigation";
 import ContactButton from "./components/ContactButton";
 import Index from "./pages/Index";
 import UKStudy from "./pages/study/UKStudy";
-import CanadaStudy from "./pages/study/CanadaStudy";
+import CyprusStudy from "./pages/study/CyprusStudy";
 import EuropeStudy from "./pages/study/EuropeStudy";
 import AustraliaStudy from "./pages/study/AustraliaStudy";
 import USAStudy from "./pages/study/USAStudy";
@@ -28,11 +28,11 @@ const App = () => (
         <Sonner />
         <div className="min-h-screen flex flex-col">
           <Navigation />
-          <main className="flex-1">
+          <main className="flex-1 pt-16">
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/study/uk" element={<UKStudy />} />
-              <Route path="/study/canada" element={<CanadaStudy />} />
+              <Route path="/study/cyprus" element={<CyprusStudy />} />
               <Route path="/study/europe" element={<EuropeStudy />} />
               <Route path="/study/australia" element={<AustraliaStudy />} />
               <Route path="/study/usa" element={<USAStudy />} />

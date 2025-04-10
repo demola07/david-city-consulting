@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { StudyAbroadApplicationInfo } from "@/components/StudyAbroadApplicationInfo";
 
 const UKStudy = () => {
   return (
@@ -64,6 +65,17 @@ const UKStudy = () => {
             />
           </motion.div>
         </div>
+
+        <div className="mt-20 text-center">
+          <h3 className="text-2xl font-semibold mb-4">Ready to Start Your Journey?</h3>
+          <p className="text-gray-600 mb-8 max-w-xl mx-auto">Click below to see the application requirements and begin the process.</p>
+          <div className="flex justify-center">
+            <div className="w-full max-w-xs">
+              <StudyAbroadApplicationInfo />
+            </div>
+          </div>
+        </div>
+
       </section>
     </div>
   );

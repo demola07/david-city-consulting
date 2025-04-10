@@ -1,12 +1,14 @@
 import { motion } from "framer-motion";
+import { StudyAbroadApplicationInfo } from "@/components/StudyAbroadApplicationInfo";
 
-const CanadaStudy = () => {
+const CyprusStudy = () => {
   return (
     <div className="min-h-screen">
       <div className="relative h-[60vh] overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1569534403589-5a5f4b0e4f8d"
-          alt="Canadian University Campus"
+          // Replace with a relevant Cyprus image URL if available
+          src="https://images.unsplash.com/photo-1589098165169-c54f1a7650c1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+          alt="Cyprus Coastal University View" // Updated Alt Text
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/50" />
@@ -16,9 +18,9 @@ const CanadaStudy = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-center text-white"
           >
-            <h1 className="text-5xl font-bold mb-4">Study in Canada</h1>
+            <h1 className="text-5xl font-bold mb-4">Study in Cyprus</h1> // Updated Title
             <p className="text-xl max-w-2xl mx-auto">
-              High-quality education and excellent post-graduation opportunities in a welcoming country
+              Affordable European education in a beautiful Mediterranean setting // Updated Subtitle
             </p>
           </motion.div>
         </div>
@@ -31,23 +33,24 @@ const CanadaStudy = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-bold mb-6">Why Study in Canada?</h2>
+            <h2 className="text-3xl font-bold mb-6">Why Study in Cyprus?</h2> // Updated Section Title
+            {/* Updated Benefit Points */}
             <ul className="space-y-4">
               <li className="flex items-start">
                 <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-2" />
-                <p>Affordable education with high academic standards</p>
+                <p>Affordable tuition fees and living costs compared to mainland Europe</p>
               </li>
               <li className="flex items-start">
                 <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-2" />
-                <p>Post-graduation work permit for up to 3 years</p>
+                <p>High standard of education with programs taught in English</p>
               </li>
               <li className="flex items-start">
                 <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-2" />
-                <p>Safe and welcoming environment for international students</p>
+                <p>Safe, sunny Mediterranean lifestyle with rich history and culture</p>
               </li>
               <li className="flex items-start">
                 <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-2" />
-                <p>Bilingual country with opportunities to learn French</p>
+                <p>Gateway to Europe with opportunities for travel and exploration</p>
               </li>
             </ul>
           </motion.div>
@@ -58,15 +61,27 @@ const CanadaStudy = () => {
             className="rounded-lg overflow-hidden shadow-xl"
           >
             <img
-              src="https://images.unsplash.com/photo-1569534402275-9f6c7209f7c5"
-              alt="Canadian Campus Life"
+              // Replace with another relevant Cyprus image URL if available
+              src="https://images.unsplash.com/photo-1600956968781-TR748d5c40f1?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Cyprus Historical Site near Coast" // Updated Alt Text
               className="w-full h-[400px] object-cover"
             />
           </motion.div>
         </div>
+
+        <div className="mt-20 text-center">
+          <h3 className="text-2xl font-semibold mb-4">Ready to Start Your Journey?</h3>
+          <p className="text-gray-600 mb-8 max-w-xl mx-auto">Click below to see the application requirements and begin the process.</p>
+          <div className="flex justify-center">
+            <div className="w-full max-w-xs">
+              <StudyAbroadApplicationInfo />
+            </div>
+          </div>
+        </div>
+
       </section>
     </div>
   );
 };
 
-export default CanadaStudy;
+export default CyprusStudy; // Updated Export 

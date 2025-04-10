@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { StudyAbroadApplicationInfo } from "@/components/StudyAbroadApplicationInfo";
 
 const EuropeStudy = () => {
   return (
@@ -30,7 +31,7 @@ const EuropeStudy = () => {
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Why Study in Europe?</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
             <motion.div
               whileHover={{ scale: 1.05 }}
               className="p-6 rounded-lg shadow-lg bg-white"
@@ -52,6 +53,16 @@ const EuropeStudy = () => {
               <h3 className="text-xl font-semibold mb-4">Travel Opportunities</h3>
               <p>Easy access to multiple countries and cultural experiences.</p>
             </motion.div>
+          </div>
+          
+          <div className="mt-16 text-center">
+            <h3 className="text-2xl font-semibold mb-4">Ready to Start Your European Adventure?</h3>
+            <p className="text-gray-600 mb-8 max-w-xl mx-auto">Click below to see the application requirements and begin the process.</p>
+            <div className="flex justify-center">
+              <div className="w-full max-w-xs">
+                <StudyAbroadApplicationInfo />
+              </div>
+            </div>
           </div>
         </div>
       </section>
