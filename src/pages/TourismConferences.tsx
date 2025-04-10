@@ -1,5 +1,5 @@
+
 import { Card } from "@/components/ui/card";
-import BookingButton from "@/components/BookingButton";
 import BookingForm from "@/components/BookingForm";
 import { useState } from "react";
 
@@ -101,7 +101,6 @@ const TourismConferences = () => {
         </div>
       </div>
       
-      <BookingButton onClick={() => setIsBookingOpen(true)} />
       <BookingForm isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
     </>
   );

@@ -1,9 +1,9 @@
+
 import React from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Clock, Globe, GraduationCap, Languages, Calculator, BookOpen } from "lucide-react";
 import { useState, useEffect } from "react";
 import TutorialBookingForm from "@/components/TutorialBookingForm";
-import BookingButton from "@/components/BookingButton";
 
 // This would typically come from an API, but for now we'll use localStorage
 const getTutorialCategories = () => {
@@ -151,7 +151,6 @@ const TutorialsPage = () => {
         </div>
       </div>
       
-      <BookingButton onClick={() => setIsBookingOpen(true)} />
       <TutorialBookingForm isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
     </>
   );
