@@ -14,21 +14,13 @@ import {
   Tooltip, 
   TooltipContent, 
   TooltipTrigger, 
-  // TooltipProvider // Not needed here as it's likely in App.tsx
-} from "@/components/ui/tooltip"; // Import Tooltip components
+} from "@/components/ui/tooltip";
 import { toast } from "@/components/ui/use-toast";
-import { StudyAbroadApplicationInfo } from "./StudyAbroadApplicationInfo"; // Import the new component
-import { IELTSInfo } from "./IELTSInfo"; // Import the new IELTS component
+import { StudyAbroadApplicationInfo } from "./StudyAbroadApplicationInfo";
+import { IELTSInfo } from "./IELTSInfo";
 
 const email = "davidcityconsulting247@gmail.com";
 
-// --- Remove Reusable Copy Function and EmailCopySection ---
-// (These are now primarily in StudyAbroadApplicationInfo.tsx)
-
-// --- Passport Info Dialog Content (Simplified) ---
-// This component might need its own copy logic if kept separate, or be refactored further.
-// For simplicity now, let's assume it might be removed or changed later if not needed.
-// Let's keep the structure but note the duplication for now.
 const PassportInfoDialogContent = () => {
   const [copied, setCopied] = useState(false);
   const handleCopy = () => {
@@ -69,10 +61,9 @@ const PassportInfoDialogContent = () => {
   );
 };
 
-// --- Proof of Fund Info Dialog Content (Simplified) ---
 const ProofOfFundInfoDialogContent = () => {
    const [copied, setCopied] = useState(false);
-   const handleCopy = () => { /* ... same copy logic as above ... */ 
+   const handleCopy = () => {
     navigator.clipboard.writeText(email).then(() => { setCopied(true); toast({ title: "Email copied!" }); setTimeout(() => setCopied(false), 2000); }).catch(err => { console.error(err); toast({ title: "Copy failed", variant: "destructive" }); });
    }
   return (
@@ -100,7 +91,6 @@ const services = [
     icon: GraduationCap,
     title: "Study Abroad",
     description: "Expert guidance for international education in top destinations worldwide.",
-    // Removed action: null - Button is embedded directly
   },
   {
     icon: Globe,
@@ -130,14 +120,13 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="py-20 bg-accent">
+    <section id="services-section" className="py-20 bg-accent">
       <div className="container px-4">
         <div className="text-center mb-16">
           <span className="text-primary font-medium">Our Services</span>
           <h2 className="text-3xl md:text-4xl font-bold mt-2">What We Offer</h2>
         </div>
         
-        {/* Grid layout remains lg:grid-cols-3 which works for 5 items (3+2) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <motion.div
@@ -154,12 +143,10 @@ const Services = () => {
               <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
               <p className="text-gray-600 flex-grow mb-6">{service.description}</p>
               
-              {/* Embed Study Abroad button directly */}
               {service.title === 'Study Abroad' && (
                 <StudyAbroadApplicationInfo />
               )}
 
-              {/* Conditional Action Button Logic for others */}
               {service.action === 'ielts_info' && (
                  <IELTSInfo />
               )}

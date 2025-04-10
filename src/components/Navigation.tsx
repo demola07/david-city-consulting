@@ -1,3 +1,4 @@
+
 import * as React from 'react';
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, NavigationMenuContent } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -134,15 +135,6 @@ const Navigation = () => {
               </Link>
             </NavigationMenuItem>
           </NavigationMenuList>
-
-          <a 
-            href="https://forms.gle/zbwtdTnGrh1HQJj17" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="ml-4 px-4 py-2 bg-white text-primary font-semibold rounded-lg shadow-md hover:bg-gray-100 transition-colors duration-200 text-sm"
-          >
-            Become a Tutor
-          </a>
         </div>
       </div>
     </NavigationMenu>
@@ -201,18 +193,6 @@ const Navigation = () => {
                         <span>Tutorials</span>
                       </Link>
                     </div>
-                  </div>
-
-                  <div className="pt-4 border-t border-gray-200">
-                    <a 
-                      href="https://forms.gle/zbwtdTnGrh1HQJj17" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      onClick={handleNavigation}
-                      className="flex items-center space-x-2 w-full p-3 font-medium text-primary bg-primary/10 rounded-lg hover:bg-primary/20 transition-colors duration-200"
-                    >
-                      <span className="font-semibold">Become a Tutor</span>
-                    </a>
                   </div>
                 </div>
               </div>

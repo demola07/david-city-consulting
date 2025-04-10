@@ -8,7 +8,7 @@ import 'swiper/css/pagination';
 import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules';
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowDown, ExternalLink } from "lucide-react";
 import * as React from 'react';
 
 const HERO_IMAGES = [
@@ -62,6 +62,13 @@ const customSwiperStyles = `
 `;
 
 const Hero = () => {
+  const scrollToServices = () => {
+    const servicesSection = document.querySelector('#services-section');
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+  
   return (
     <section className="relative h-[100vh] flex items-center justify-center overflow-hidden">
       {/* Add custom styles */}
@@ -159,18 +166,21 @@ const Hero = () => {
           >
             <Button 
               size="lg"
+              onClick={scrollToServices}
               className="bg-[#8B5CF6] hover:bg-[#7C3AED] text-white px-8 py-6 text-lg font-semibold rounded-lg shadow-xl transition-all hover:translate-y-[-2px]"
             >
               Get Started
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ArrowDown className="ml-2 h-5 w-5" />
             </Button>
-            <Button 
-              variant="outline"
-              size="lg"
-              className="bg-transparent border-2 border-white text-white hover:bg-white/20 px-8 py-6 text-lg font-semibold rounded-lg transition-all"
+            <a 
+              href="https://forms.gle/zbwtdTnGrh1HQJj17" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white text-white hover:bg-white/20 px-8 py-6 text-lg font-semibold transition-all h-[52px]"
             >
-              Learn More
-            </Button>
+              Become a Tutor
+              <ExternalLink className="h-5 w-5" />
+            </a>
           </motion.div>
         </motion.div>
       </div>
@@ -181,6 +191,8 @@ const Hero = () => {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 1.5, repeat: Infinity, repeatType: "reverse" }}
+        onClick={scrollToServices}
+        style={{ cursor: 'pointer' }}
       >
         <div className="flex flex-col items-center">
           <span className="text-white text-sm mb-2 font-medium">Scroll Down</span>
