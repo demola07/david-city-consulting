@@ -46,7 +46,7 @@ const ContactButton = () => {
         </SheetHeader>
         <div className="mt-8 space-y-4 px-2">
           <Button
-            onClick={() => window.open('https://wa.me/YOUR_WHATSAPP_NUMBER', '_blank')}
+            onClick={() => window.open('https://wa.me/+2348162495328', '_blank')}
             className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white flex items-center justify-center gap-3 h-14 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
           >
             <MessageCircle className="w-6 h-6" />
