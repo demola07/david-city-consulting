@@ -1,25 +1,24 @@
-
 import { useEffect } from "react";
 import Contact from "@/components/Contact";
 import DestinationCarousel from "@/components/DestinationCarousel";
 
 const destinationsData = [
   {
-    name: "Sydney, Australia",
-    description: "A vibrant metropolis with iconic landmarks and beautiful beaches, offering world-class conference facilities alongside breathtaking natural beauty.",
+    name: "Australia",
+    description: "A land of stunning natural beauty and vibrant cities, offering world-class conference facilities alongside unique cultural experiences.",
     highlights: [
-      "Sydney Opera House tours",
-      "Harbor Bridge Climb experience",
-      "Corporate events with harbor views",
-      "World-class conference centers"
+      "Iconic Sydney Opera House venues",
+      "Great Barrier Reef team activities",
+      "Modern conference centers",
+      "Unique wildlife experiences"
     ],
     images: [
-      "/lovable-uploads/7655a913-694b-4bfe-84a7-b7f4b0f9aac3.png"
+      "/images/destinations/australia.jpg"
     ]
   },
   {
-    name: "Limassol, Cyprus",
-    description: "A Mediterranean gem combining European culture with Middle Eastern influence, offering excellent conference facilities alongside stunning seaside views.",
+    name: "Cyprus",
+    description: "A Mediterranean paradise offering excellent conference facilities, beautiful beaches, and a rich cultural heritage.",
     highlights: [
       "Beachfront conference venues",
       "Ancient archaeological sites",
@@ -27,66 +26,37 @@ const destinationsData = [
       "Year-round pleasant climate"
     ],
     images: [
-      "/lovable-uploads/c8810df7-cbc5-4bf5-8acb-5577e9bc78db.png"
+      "/images/destinations/cyprus.jpg"
     ]
   },
   {
-    name: "Dubai Desert, UAE",
-    description: "Experience luxury amidst golden sands, where traditional Arabian hospitality meets cutting-edge modernity in unique desert conference settings.",
+    name: "United Kingdom",
+    description: "A perfect blend of historic charm and modern innovation, offering world-class conference facilities in iconic locations.",
     highlights: [
-      "Desert safari experiences",
-      "Luxury tent conferences",
-      "Traditional Bedouin entertainment",
-      "Off-road adventure activities"
+      "Historic venue options",
+      "Cultural heritage experiences",
+      "Modern conference centers",
+      "Efficient transportation"
     ],
     images: [
-      "/lovable-uploads/056c5af5-87cd-4e46-9bb8-e982b067a930.png"
+      "/images/destinations/uk.jpg"
     ]
   },
   {
-    name: "Dubai Marina, UAE",
-    description: "A futuristic waterfront development offering state-of-the-art conference facilities with stunning architecture and luxury accommodations.",
+    name: "USA",
+    description: "A diverse destination offering cutting-edge conference facilities and unique experiences across its vibrant cities.",
     highlights: [
-      "Ultramodern conference centers",
-      "Luxury yacht networking events",
-      "Beachfront corporate gatherings",
-      "World-class shopping experiences"
+      "State-of-the-art venues",
+      "World-class infrastructure",
+      "Diverse cultural experiences",
+      "Innovative meeting spaces"
     ],
     images: [
-      "/lovable-uploads/c2f5bf08-cba5-43a0-b827-a2d96a244664.png",
-      "/lovable-uploads/0f5dabce-1058-4f9e-8cd2-3394f8bf0ec2.png"
+      "/images/destinations/usa.jpg"
     ]
   },
   {
-    name: "Paris, France",
-    description: "The City of Light offers a perfect blend of romance, culture, and sophistication for unforgettable conferences and business events.",
-    highlights: [
-      "Historic conference venues",
-      "World-renowned cuisine",
-      "Cultural team-building activities",
-      "Iconic landmark visits"
-    ],
-    images: [
-      "/lovable-uploads/83a92f4b-ad39-4cc2-8499-60dff343336d.png",
-      "/lovable-uploads/7011f76d-c27a-435d-b98f-c202fd0bfab1.png",
-      "/lovable-uploads/32bc94a9-47ad-4e51-96e1-222dcddaaef0.png"
-    ]
-  },
-  {
-    name: "Alsace, France",
-    description: "Experience the charm of French countryside with picturesque towns, vineyards, and unique venues perfect for intimate conferences and retreats.",
-    highlights: [
-      "Vineyard conference spaces",
-      "Medieval town exploration",
-      "Wine tasting team activities",
-      "Rustic French countryside experience"
-    ],
-    images: [
-      "/lovable-uploads/826c492c-aeba-46df-9f7e-9f5d96c6d4ca.png"
-    ]
-  },
-  {
-    name: "Tokyo, Japan",
+    name: "Japan",
     description: "The perfect fusion of ancient traditions and futuristic innovation, offering unique cultural experiences alongside cutting-edge conference facilities.",
     highlights: [
       "High-tech conference centers",
@@ -95,12 +65,14 @@ const destinationsData = [
       "Unique team-building activities"
     ],
     images: [
-      "/lovable-uploads/153acab3-4890-48cc-ad91-7457f2d7bf23.png",
-      "/lovable-uploads/2e1ff3c9-2534-422c-b610-7c684f3ac937.png"
+      "/images/destinations/japan.jpg",
+      "/images/destinations/japan1.jpg",
+      "/images/destinations/japan3.jpg",
+      "/images/destinations/japan4.jpg"
     ]
   },
   {
-    name: "Kuala Lumpur, Malaysia",
+    name: "Malaysia",
     description: "A vibrant Southeast Asian hub offering world-class conference facilities, cultural diversity, and impressive modern architecture at affordable rates.",
     highlights: [
       "Twin Towers conference experience",
@@ -109,34 +81,41 @@ const destinationsData = [
       "Tropical retreat options nearby"
     ],
     images: [
-      "/lovable-uploads/9ecceb38-a524-4c12-8b9c-9106a27b0abd.png",
-      "/lovable-uploads/a5bd56f0-4d0c-4341-9d55-bb3fffcdf307.png"
+      "/images/destinations/Malaysia.jpg",
+      "/images/destinations/Malaysia2.jpg",
+      "/images/destinations/Malaysia3.jpg"
     ]
   },
   {
-    name: "Batu Caves, Malaysia",
-    description: "Combine business with cultural exploration at this unique destination offering spiritual heritage alongside modern meeting facilities.",
+    name: "France",
+    description: "Experience the charm of French countryside with picturesque towns, vineyards, and unique venues perfect for intimate conferences and retreats.",
     highlights: [
-      "Cultural immersion experiences",
-      "Unique cave venue possibilities",
-      "Team-building climbing activities",
-      "Hindu temple guided tours"
+      "Vineyard conference spaces",
+      "Medieval town exploration",
+      "Wine tasting team activities",
+      "Rustic French countryside experience"
     ],
     images: [
-      "/lovable-uploads/dcb16aba-9a28-40e1-877a-533d1dd1c5ae.png"
+      "/images/destinations/france.jpg",
+      "/images/destinations/france1.jpg",
+      "/images/destinations/france3.jpg",
+      "/images/destinations/france4.jpg",
+      "/images/destinations/france5.jpg"
     ]
   },
   {
-    name: "Kobe, Japan",
-    description: "A scenic port city offering impressive mountain views, renowned cuisine, and excellent conference facilities with Japanese efficiency.",
+    name: "Dubai",
+    description: "A futuristic waterfront development offering state-of-the-art conference facilities with stunning architecture and luxury accommodations.",
     highlights: [
-      "Harbor-view conference venues",
-      "Famous Kobe beef dining experiences",
-      "Mount Rokko excursions",
-      "Hot spring team retreats"
+      "Ultramodern conference centers",
+      "Luxury yacht networking events",
+      "Beachfront corporate gatherings",
+      "World-class shopping experiences"
     ],
     images: [
-      "/lovable-uploads/f6dcb811-2140-4de6-8c40-c9c0c448a403.png"
+      "/images/destinations/Dubai.jpg",
+      "/images/destinations/dubai2.jpg",
+      "/images/destinations/dubai3.jpg"
     ]
   },
   {
@@ -149,7 +128,57 @@ const destinationsData = [
       "Efficient business infrastructure"
     ],
     images: [
-      "/lovable-uploads/26b6e5de-da2a-4e80-a3fd-c6fcd60cc8d1.png"
+      "/images/destinations/Singapore.jpg",
+      "/images/destinations/singapore1.jpg",
+      "/images/destinations/singapore3.jpg",
+      "/images/destinations/singapore5.jpg",
+      "/images/destinations/singapore6.jpg",
+      "/images/destinations/singapore7.jpg"
+    ]
+  },
+  {
+    name: "Qatar",
+    description: "A modern Middle Eastern hub offering world-class conference facilities and luxury accommodations in a rapidly developing business environment.",
+    highlights: [
+      "State-of-the-art conference centers",
+      "Luxury hotel accommodations",
+      "Cultural heritage experiences",
+      "Modern business infrastructure"
+    ],
+    images: [
+      "/images/destinations/Qatar.jpg",
+      "/images/destinations/qatar1.jpg",
+      "/images/destinations/qatar2.jpg"
+    ]
+  },
+  {
+    name: "Mauritius",
+    description: "A tropical paradise offering unique conference venues with stunning beachfront locations and luxury resort facilities.",
+    highlights: [
+      "Beachfront conference venues",
+      "Luxury resort accommodations",
+      "Water sports activities",
+      "Cultural island experiences"
+    ],
+    images: [
+      "/images/destinations/Mauritius.jpg",
+      "/images/destinations/Mauritius1.jpg",
+      "/images/destinations/Mauritius2.jpg"
+    ]
+  },
+  {
+    name: "Rwanda",
+    description: "A unique African destination offering conference facilities amidst stunning natural beauty and rich cultural heritage.",
+    highlights: [
+      "Eco-friendly conference venues",
+      "Wildlife safari experiences",
+      "Cultural heritage tours",
+      "Sustainable tourism initiatives"
+    ],
+    images: [
+      "/images/destinations/rwanda.png",
+      "/images/destinations/rwanda1.jpg",
+      "/images/destinations/rwanda3.jpg"
     ]
   }
 ];
