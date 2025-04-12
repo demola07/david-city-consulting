@@ -1,6 +1,6 @@
 
 import { useEffect } from "react";
-import { Contact } from "@/components/Contact";
+import Contact from "@/components/Contact";
 import DestinationCarousel from "@/components/DestinationCarousel";
 
 const destinationsData = [
