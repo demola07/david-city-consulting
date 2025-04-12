@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { GraduationCap, Globe, Book, Info, ClipboardCopy, DollarSign, BookOpen } from "lucide-react";
+import { GraduationCap, Globe, Book, Info, ClipboardCopy, DollarSign, BookOpen, Calendar } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { 
   Dialog, 
   DialogContent, 
@@ -86,6 +87,46 @@ const ProofOfFundInfoDialogContent = () => {
   );
 };
 
+const TutoringInfoDialogContent = () => {
+  const [copied, setCopied] = useState(false);
+  const handleCopy = () => {
+    navigator.clipboard.writeText(email).then(() => {
+      setCopied(true);
+      toast({ title: "Email address copied!" });
+      setTimeout(() => setCopied(false), 2000);
+    }).catch(err => {
+      console.error('Failed to copy email: ', err);
+      toast({ title: "Failed to copy", variant: "destructive" });
+    });
+  };
+  return (
+    <div className="space-y-4 text-sm">
+      <p>To schedule tutoring sessions, please send the following details via email to:</p>
+      <div className="flex items-center gap-2 p-2 rounded bg-muted">
+        <p className="font-semibold text-primary break-all flex-1">{email}</p>
+        <Tooltip>
+          <TooltipTrigger asChild>
+             <Button variant="ghost" size="icon" onClick={handleCopy} aria-label="Copy email address">
+               <ClipboardCopy className="h-4 w-4" />
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent><p>Copy</p></TooltipContent>
+        </Tooltip>
+      </div>
+      {copied && <span className="text-xs text-green-600">Copied!</span>}
+      <ul className="list-disc pl-5 space-y-1 text-gray-700">
+        <li>Your Full Name</li>
+        <li>Subject(s) of Interest</li>
+        <li>Preferred Schedule (Online/On-site)</li>
+        <li>Your Phone Number</li>
+        <li>Your Email Address</li>
+        <li>Your Location (for on-site sessions)</li>
+      </ul>
+      <p>We will review your details and contact you to arrange the sessions.</p>
+    </div>
+  );
+};
+
 const services = [
   {
     icon: GraduationCap,
@@ -96,7 +137,13 @@ const services = [
     icon: Globe,
     title: "Tourism",
     description: "Discover amazing destinations and create unforgettable memories.",
-    action: null,
+    action: "tourism_link",
+  },
+  {
+    icon: BookOpen,
+    title: "Get a Tutor",
+    description: "Expert tutoring in languages, sciences, mathematics, accounting, literature, and exam preparation for common entrance, UTME, P.UTME, and more.",
+    action: "tutoring_info",
   },
   {
     icon: BookOpen,
@@ -147,6 +194,14 @@ const Services = () => {
                 <StudyAbroadApplicationInfo />
               )}
 
+              {service.action === 'tourism_link' && (
+                <Link to="/tourism-conferences" className="mt-auto">
+                  <Button className="w-full">
+                    <Globe className="mr-2 h-4 w-4" /> Explore Destinations
+                  </Button>
+                </Link>
+              )}
+
               {service.action === 'ielts_info' && (
                  <IELTSInfo />
               )}
@@ -183,6 +238,24 @@ const Services = () => {
                       </DialogDescription>
                     </DialogHeader>
                     <ProofOfFundInfoDialogContent />
+                  </DialogContent>
+                </Dialog>
+              )}
+              {service.action === 'tutoring_info' && (
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button className="mt-auto">
+                      <Calendar className="mr-2 h-4 w-4" /> Schedule Sessions
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-[425px]">
+                    <DialogHeader>
+                      <DialogTitle>Schedule Tutoring Sessions</DialogTitle>
+                      <DialogDescription>
+                        Please provide your details to schedule tutoring sessions.
+                      </DialogDescription>
+                    </DialogHeader>
+                    <TutoringInfoDialogContent />
                   </DialogContent>
                 </Dialog>
               )}
