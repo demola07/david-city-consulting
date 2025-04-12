@@ -1,10 +1,15 @@
 
-import React, { useCallback, useEffect, useState } from 'react';
-import useEmblaCarousel from 'embla-carousel-react';
-import Autoplay from 'embla-carousel-autoplay';
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation } from 'swiper/modules';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/autoplay';
 
 interface DestinationInfo {
   name: string;
@@ -18,52 +23,47 @@ interface DestinationCarouselProps {
 }
 
 const DestinationCarousel = ({ destination }: DestinationCarouselProps) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 5000, stopOnInteraction: false })]);
-  const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
-  const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
-  
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev();
-  }, [emblaApi]);
-  
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext();
-  }, [emblaApi]);
-  
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    setPrevBtnEnabled(emblaApi.canScrollPrev());
-    setNextBtnEnabled(emblaApi.canScrollNext());
-  }, [emblaApi]);
-  
-  useEffect(() => {
-    if (!emblaApi) return;
-    onSelect();
-    emblaApi.on('select', onSelect);
-    emblaApi.on('reInit', onSelect);
-  }, [emblaApi, onSelect]);
+  const navigationPrevRef = React.useRef<HTMLButtonElement>(null);
+  const navigationNextRef = React.useRef<HTMLButtonElement>(null);
   
   return (
     <Card className="overflow-hidden bg-white shadow-lg rounded-xl">
       <div className="relative">
-        <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex">
-            {destination.images.map((image, index) => (
-              <div className="flex-[0_0_100%] min-w-0" key={index}>
-                <div className="relative h-64 md:h-80">
-                  <img 
-                    src={image} 
-                    alt={`${destination.name} - Image ${index + 1}`} 
-                    className="absolute w-full h-full object-cover"
-                  />
-                </div>
+        <Swiper
+          modules={[Autoplay, Navigation]}
+          autoplay={{ delay: 5000, disableOnInteraction: false }}
+          loop={true}
+          navigation={{
+            prevEl: navigationPrevRef.current,
+            nextEl: navigationNextRef.current,
+          }}
+          onBeforeInit={(swiper) => {
+            if (typeof swiper.params.navigation !== 'boolean') {
+              // Apply navigation prevEl and nextEl params
+              const navigation = swiper.params.navigation;
+              if (navigation) {
+                navigation.prevEl = navigationPrevRef.current;
+                navigation.nextEl = navigationNextRef.current;
+              }
+            }
+          }}
+          className="w-full"
+        >
+          {destination.images.map((image, index) => (
+            <SwiperSlide key={index}>
+              <div className="relative h-64 md:h-80">
+                <img 
+                  src={image} 
+                  alt={`${destination.name} - Image ${index + 1}`} 
+                  className="absolute w-full h-full object-cover"
+                />
               </div>
-            ))}
-          </div>
-        </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
         
         <Button 
-          onClick={scrollPrev} 
+          ref={navigationPrevRef}
           className="absolute left-2 top-1/2 -translate-y-1/2 p-2 h-10 w-10 rounded-full bg-white/60 hover:bg-white/80 text-gray-800 backdrop-blur-sm z-10"
           variant="ghost"
           size="icon"
@@ -72,7 +72,7 @@ const DestinationCarousel = ({ destination }: DestinationCarouselProps) => {
         </Button>
         
         <Button 
-          onClick={scrollNext} 
+          ref={navigationNextRef}
           className="absolute right-2 top-1/2 -translate-y-1/2 p-2 h-10 w-10 rounded-full bg-white/60 hover:bg-white/80 text-gray-800 backdrop-blur-sm z-10"
           variant="ghost"
           size="icon"
