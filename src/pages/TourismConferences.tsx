@@ -13,7 +13,8 @@ const destinationsData = [
       "Unique wildlife experiences"
     ],
     images: [
-      "/images/destinations/australia.jpg"
+      "/images/destinations/australia.jpg",
+      "/images/destinations/australia1.jpg"
     ]
   },
   {
@@ -26,7 +27,9 @@ const destinationsData = [
       "Year-round pleasant climate"
     ],
     images: [
-      "/images/destinations/cyprus.jpg"
+      "/images/destinations/cyprus.jpg",
+      "/images/destinations/cyprus1.jpg",
+      "/images/destinations/cyprus2.jpg"
     ]
   },
   {
@@ -39,7 +42,9 @@ const destinationsData = [
       "Efficient transportation"
     ],
     images: [
-      "/images/destinations/uk.jpg"
+      "/images/destinations/uk.jpg",
+      "/images/destinations/uk1.jpg",
+      "/images/destinations/uk2.JPG"
     ]
   },
   {
@@ -52,7 +57,10 @@ const destinationsData = [
       "Innovative meeting spaces"
     ],
     images: [
-      "/images/destinations/usa.jpg"
+      "/images/destinations/usa.jpg",
+      "/images/destinations/usa1.jpg",
+      "/images/destinations/usa2.jpg",
+      "/images/destinations/usa3.jpg"
     ]
   },
   {

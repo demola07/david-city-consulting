@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation } from 'swiper/modules';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -10,6 +9,7 @@ import { Card } from '@/components/ui/card';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
+import 'swiper/css/pagination';
 
 interface DestinationInfo {
   name: string;
@@ -30,16 +30,26 @@ const DestinationCarousel = ({ destination }: DestinationCarouselProps) => {
     <Card className="overflow-hidden bg-white shadow-lg rounded-xl">
       <div className="relative">
         <Swiper
-          modules={[Autoplay, Navigation]}
-          autoplay={{ delay: 5000, disableOnInteraction: false }}
+          modules={[Autoplay, Navigation, Pagination]}
+          autoplay={{ 
+            delay: 5000, 
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true
+          }}
           loop={true}
           navigation={{
             prevEl: navigationPrevRef.current,
             nextEl: navigationNextRef.current,
           }}
+          pagination={{
+            clickable: true,
+            dynamicBullets: true
+          }}
+          touchRatio={1.5}
+          resistance={true}
+          resistanceRatio={0.85}
           onBeforeInit={(swiper) => {
             if (typeof swiper.params.navigation !== 'boolean') {
-              // Apply navigation prevEl and nextEl params
               const navigation = swiper.params.navigation;
               if (navigation) {
                 navigation.prevEl = navigationPrevRef.current;
@@ -64,7 +74,7 @@ const DestinationCarousel = ({ destination }: DestinationCarouselProps) => {
         
         <Button 
           ref={navigationPrevRef}
-          className="absolute left-2 top-1/2 -translate-y-1/2 p-2 h-10 w-10 rounded-full bg-white/60 hover:bg-white/80 text-gray-800 backdrop-blur-sm z-10"
+          className="absolute left-2 top-1/2 -translate-y-1/2 p-2 h-10 w-10 rounded-full bg-white/60 hover:bg-white/80 text-gray-800 backdrop-blur-sm z-10 hidden md:flex"
           variant="ghost"
           size="icon"
         >
@@ -73,7 +83,7 @@ const DestinationCarousel = ({ destination }: DestinationCarouselProps) => {
         
         <Button 
           ref={navigationNextRef}
-          className="absolute right-2 top-1/2 -translate-y-1/2 p-2 h-10 w-10 rounded-full bg-white/60 hover:bg-white/80 text-gray-800 backdrop-blur-sm z-10"
+          className="absolute right-2 top-1/2 -translate-y-1/2 p-2 h-10 w-10 rounded-full bg-white/60 hover:bg-white/80 text-gray-800 backdrop-blur-sm z-10 hidden md:flex"
           variant="ghost"
           size="icon"
         >

@@ -1,4 +1,3 @@
-
 import { StrictMode } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -6,7 +5,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
-import ContactButton from "./components/ContactButton";
 import Index from "./pages/Index";
 import UKStudy from "./pages/study/UKStudy";
 import CyprusStudy from "./pages/study/CyprusStudy";
@@ -47,7 +45,6 @@ const App = () => (
               </Route>
             </Routes>
           </main>
-          <ContactButton />
         </div>
       </TooltipProvider>
     </BrowserRouter>
