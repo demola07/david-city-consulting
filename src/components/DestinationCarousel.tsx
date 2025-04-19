@@ -1,7 +1,7 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 
@@ -108,6 +108,29 @@ const DestinationCarousel = ({ destination }: DestinationCarouselProps) => {
               </li>
             ))}
           </ul>
+        </div>
+
+        <div className="mt-6">
+          <a 
+            href="https://forms.gle/ou5TYYPN9z2zCiW16"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group"
+          >
+            <Button className="w-full bg-primary hover:bg-primary/90 text-white transition-all duration-300 flex items-center justify-center gap-2 py-4 text-lg font-medium shadow-lg hover:shadow-xl hover:scale-[1.02]">
+              <Globe className="h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
+              <span>Book This Destination</span>
+              <svg 
+                className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24" 
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Button>
+          </a>
         </div>
       </div>
     </Card>
