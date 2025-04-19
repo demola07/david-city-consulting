@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { GraduationCap, Globe, Book, Info, ClipboardCopy, DollarSign, BookOpen, Calendar } from "lucide-react";
+import { GraduationCap, Globe, Book, Info, ClipboardCopy, DollarSign, BookOpen, Calendar, Plane, Hotel, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -132,36 +132,49 @@ const services = [
     icon: GraduationCap,
     title: "Study Abroad",
     description: "Expert guidance for international education in top destinations worldwide.",
+    action: "study_abroad_form"
   },
   {
     icon: Globe,
     title: "Tourism",
     description: "Discover amazing destinations and create unforgettable memories.",
-    action: "tourism_link",
+    action: "tourism_form",
   },
   {
     icon: BookOpen,
     title: "Get a Tutor",
     description: "Expert tutoring in languages, sciences, mathematics, accounting, literature, and exam preparation for common entrance, UTME, P.UTME, and more.",
-    action: "tutoring_info",
+    action: "tutoring_form",
   },
   {
     icon: BookOpen,
     title: "IELTS Classes",
     description: "David City Tutors (private or on-site tutorials) for IELTS preparation.",
-    action: "ielts_info",
+    action: "ielts_form",
   },
   {
     icon: Globe,
     title: "Passport Processing",
     description: "Let's help you process your international passports.",
-    action: "passport_info",
+    action: "passport_form",
   },
   {
     icon: DollarSign,
     title: "Proof of Fund",
     description: "Assistance with securing the necessary proof of funds for your applications.",
     action: "proof_of_fund_info",
+  },
+  {
+    icon: Plane,
+    title: "Flight & Accommodation",
+    description: "Expert assistance with flight bookings and accommodation arrangements for your travel needs.",
+    action: "flight_accommodation_form",
+  },
+  {
+    icon: Users,
+    title: "Children in Diaspora Bible Club",
+    description: "Join our vibrant community for children's spiritual growth and development.",
+    action: "bible_club_form",
   },
 ];
 
@@ -190,39 +203,121 @@ const Services = () => {
               <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
               <p className="text-gray-600 flex-grow mb-6">{service.description}</p>
               
-              {service.title === 'Study Abroad' && (
-                <StudyAbroadApplicationInfo />
-              )}
-
-              {service.action === 'tourism_link' && (
-                <Link to="/tourism-conferences" className="mt-auto">
-                  <Button className="w-full">
-                    <Globe className="mr-2 h-4 w-4" /> Explore Destinations
+              {service.action === 'study_abroad_form' && (
+                <a 
+                  href="https://forms.gle/M7j54aidfz3LmAnv8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-auto group"
+                >
+                  <Button className="w-full bg-primary hover:bg-primary/90 text-white transition-all duration-300 flex items-center justify-center gap-2 py-6 text-lg font-medium shadow-lg hover:shadow-xl hover:scale-[1.02]">
+                    <GraduationCap className="h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
+                    <span>Start Your Journey</span>
+                    <svg 
+                      className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24" 
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
                   </Button>
-                </Link>
+                </a>
               )}
 
-              {service.action === 'ielts_info' && (
-                 <IELTSInfo />
+              {service.action === 'tourism_form' && (
+                <a 
+                  href="https://forms.gle/ou5TYYPN9z2zCiW16"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-auto group"
+                >
+                  <Button className="w-full bg-primary hover:bg-primary/90 text-white transition-all duration-300 flex items-center justify-center gap-2 py-6 text-lg font-medium shadow-lg hover:shadow-xl hover:scale-[1.02]">
+                    <Globe className="h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
+                    <span>Explore Destinations</span>
+                    <svg 
+                      className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24" 
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Button>
+                </a>
               )}
-              {service.action === 'passport_info' && (
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <Button className="mt-auto">
-                      <Info className="mr-2 h-4 w-4" /> View Instructions
-                    </Button>
-                  </DialogTrigger>
-                  <DialogContent className="sm:max-w-[425px]">
-                    <DialogHeader>
-                      <DialogTitle>Passport Processing Instructions</DialogTitle>
-                      <DialogDescription>
-                        Please gather the required information and send it to us via email.
-                      </DialogDescription>
-                    </DialogHeader>
-                    <PassportInfoDialogContent />
-                  </DialogContent>
-                </Dialog>
+
+              {service.action === 'tutoring_form' && (
+                <a 
+                  href="https://forms.gle/fqwiphWuTk3jRE9A6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-auto group"
+                >
+                  <Button className="w-full bg-primary hover:bg-primary/90 text-white transition-all duration-300 flex items-center justify-center gap-2 py-6 text-lg font-medium shadow-lg hover:shadow-xl hover:scale-[1.02]">
+                    <BookOpen className="h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
+                    <span>Schedule Sessions</span>
+                    <svg 
+                      className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24" 
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Button>
+                </a>
               )}
+
+              {service.action === 'ielts_form' && (
+                <a 
+                  href="https://forms.gle/8gFgpHm86EemS8rv7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-auto group"
+                >
+                  <Button className="w-full bg-primary hover:bg-primary/90 text-white transition-all duration-300 flex items-center justify-center gap-2 py-6 text-lg font-medium shadow-lg hover:shadow-xl hover:scale-[1.02]">
+                    <BookOpen className="h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
+                    <span>Register for Classes</span>
+                    <svg 
+                      className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24" 
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Button>
+                </a>
+              )}
+
+              {service.action === 'passport_form' && (
+                <a 
+                  href="https://forms.gle/9APcyFhzfmho1zsx7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-auto group"
+                >
+                  <Button className="w-full bg-primary hover:bg-primary/90 text-white transition-all duration-300 flex items-center justify-center gap-2 py-6 text-lg font-medium shadow-lg hover:shadow-xl hover:scale-[1.02]">
+                    <Globe className="h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
+                    <span>Apply for Passport</span>
+                    <svg 
+                      className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24" 
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Button>
+                </a>
+              )}
+
               {service.action === 'proof_of_fund_info' && (
                 <Dialog>
                   <DialogTrigger asChild>
@@ -241,23 +336,54 @@ const Services = () => {
                   </DialogContent>
                 </Dialog>
               )}
-              {service.action === 'tutoring_info' && (
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <Button className="mt-auto">
-                      <Calendar className="mr-2 h-4 w-4" /> Schedule Sessions
-                    </Button>
-                  </DialogTrigger>
-                  <DialogContent className="sm:max-w-[425px]">
-                    <DialogHeader>
-                      <DialogTitle>Schedule Tutoring Sessions</DialogTitle>
-                      <DialogDescription>
-                        Please provide your details to schedule tutoring sessions.
-                      </DialogDescription>
-                    </DialogHeader>
-                    <TutoringInfoDialogContent />
-                  </DialogContent>
-                </Dialog>
+
+              {service.action === 'flight_accommodation_form' && (
+                <a 
+                  href="https://forms.gle/X7iyAt8ykY5RoE5LA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-auto group"
+                >
+                  <Button className="w-full bg-primary hover:bg-primary/90 text-white transition-all duration-300 flex items-center justify-center gap-2 py-6 text-lg font-medium shadow-lg hover:shadow-xl hover:scale-[1.02]">
+                    <div className="flex items-center gap-1">
+                      <Plane className="h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
+                      <Hotel className="h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
+                    </div>
+                    <span>Book Now</span>
+                    <svg 
+                      className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24" 
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Button>
+                </a>
+              )}
+
+              {service.action === 'bible_club_form' && (
+                <a 
+                  href="https://forms.gle/cDHkSGBvBVgqtqgi6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-auto group"
+                >
+                  <Button className="w-full bg-primary hover:bg-primary/90 text-white transition-all duration-300 flex items-center justify-center gap-2 py-6 text-lg font-medium shadow-lg hover:shadow-xl hover:scale-[1.02]">
+                    <Users className="h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
+                    <span>Join the Club</span>
+                    <svg 
+                      className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24" 
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Button>
+                </a>
               )}
             </motion.div>
           ))}

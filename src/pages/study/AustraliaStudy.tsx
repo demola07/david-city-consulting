@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { StudyAbroadApplicationInfo } from "@/components/StudyAbroadApplicationInfo";
+import { Button } from "@/components/ui/button";
+import { GraduationCap } from "lucide-react";
 
 const AustraliaStudy = () => {
   return (
@@ -55,13 +56,30 @@ const AustraliaStudy = () => {
             </motion.div>
           </div>
 
-          <div className="mt-16 text-center">
-            <h3 className="text-2xl font-semibold mb-4">Ready for Your Australian Education?</h3>
-            <p className="text-gray-600 mb-8 max-w-xl mx-auto">Click below to see the application requirements and begin the process.</p>
+          <div className="mt-20 text-center">
+            <h3 className="text-2xl font-semibold mb-4">Ready to Start Your Journey?</h3>
+            <p className="text-gray-600 mb-8 max-w-xl mx-auto">Click below to begin your application process.</p>
             <div className="flex justify-center">
-              <div className="w-full max-w-xs">
-                <StudyAbroadApplicationInfo />
-              </div>
+              <a 
+                href="https://forms.gle/M7j54aidfz3LmAnv8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full max-w-xs group"
+              >
+                <Button className="w-full bg-primary hover:bg-primary/90 text-white transition-all duration-300 flex items-center justify-center gap-2 py-6 text-lg font-medium shadow-lg hover:shadow-xl hover:scale-[1.02]">
+                  <GraduationCap className="h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
+                  <span>Start Your Application</span>
+                  <svg 
+                    className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24" 
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Button>
+              </a>
             </div>
           </div>
 
