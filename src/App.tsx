@@ -16,6 +16,7 @@ import TutorialsPage from "./pages/Tutorials";
 import AdminLayout from "./pages/admin/AdminLayout";
 import Login from "./pages/admin/Login";
 import TutorialManagement from "./pages/admin/TutorialManagement";
+import CanadaStudy from "./pages/study/CanadaStudy";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +36,7 @@ const App = () => (
               <Route path="/study/europe" element={<EuropeStudy />} />
               <Route path="/study/australia" element={<AustraliaStudy />} />
               <Route path="/study/usa" element={<USAStudy />} />
+              <Route path="/study/canada" element={<CanadaStudy />} />
               <Route path="/tourism-conferences" element={<TourismConferences />} />
               <Route path="/tutorials" element={<TutorialsPage />} />
               

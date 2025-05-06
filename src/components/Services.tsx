@@ -319,22 +319,26 @@ const Services = () => {
               )}
 
               {service.action === 'proof_of_fund_info' && (
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <Button className="mt-auto">
-                      <Info className="mr-2 h-4 w-4" /> Contact Us
-                    </Button>
-                  </DialogTrigger>
-                  <DialogContent className="sm:max-w-[425px]">
-                    <DialogHeader>
-                      <DialogTitle>Proof of Fund Assistance</DialogTitle>
-                      <DialogDescription>
-                         Contact us via email to discuss your proof of fund requirements.
-                      </DialogDescription>
-                    </DialogHeader>
-                    <ProofOfFundInfoDialogContent />
-                  </DialogContent>
-                </Dialog>
+                <a 
+                  href="https://forms.gle/2pRUfzvP7btzwbpt6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-auto group"
+                >
+                  <Button className="w-full bg-primary hover:bg-primary/90 text-white transition-all duration-300 flex items-center justify-center gap-2 py-6 text-lg font-medium shadow-lg hover:shadow-xl hover:scale-[1.02]">
+                    <DollarSign className="h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
+                    <span>Apply Now</span>
+                    <svg 
+                      className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24" 
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Button>
+                </a>
               )}
 
               {service.action === 'flight_accommodation_form' && (

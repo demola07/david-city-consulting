@@ -1,4 +1,3 @@
-
 import * as React from 'react';
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, NavigationMenuContent } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -32,6 +31,11 @@ const destinations = [
     title: "USA",
     href: "/study/usa",
     description: "Leading research institutions and innovative programs"
+  },
+  {
+    title: "Canada",
+    href: "/study/canada",
+    description: "World-class education and vibrant multicultural cities"
   }
 ];
 

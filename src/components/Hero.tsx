@@ -16,7 +16,8 @@ const HERO_IMAGES = [
   '/images/hero/hero2.jpg',
   '/images/hero/hero3.jpg',
   '/images/hero/hero4.jpg',
-  '/images/hero/hero5.jpg'
+  '/images/hero/hero5.jpg',
+  '/images/hero/hero6.jpg'
 ];
 
 // Add custom styles for the navigation arrows

@@ -34,6 +34,12 @@ const countries = [
     description: "Diverse educational opportunities across historic institutions",
     href: "/study/europe",
   },
+  {
+    name: "Canada",
+    image: "/images/destinations/canada1.jpg",
+    description: "World-class education and vibrant multicultural cities",
+    href: "/study/canada",
+  },
 ];
 
 const Countries = () => {
