@@ -19,6 +19,7 @@ import Login from "./pages/admin/Login";
 import TutorialManagement from "./pages/admin/TutorialManagement";
 import CanadaStudy from "./pages/study/CanadaStudy";
 import AboutUs from "./pages/AboutUs";
+import FloatingContactButtons from "./components/FloatingContactButtons";
 
 const queryClient = new QueryClient();
 
@@ -50,6 +51,7 @@ const App = () => (
               </Route>
             </Routes>
           </main>
+          <FloatingContactButtons />
         </div>
       </TooltipProvider>
     </BrowserRouter>
