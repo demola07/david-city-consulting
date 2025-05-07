@@ -37,9 +37,9 @@ export default {
           hover: "#e9ecef",
         },
         ash: {
-          light: "#F1F1F1",
-          DEFAULT: "#E8E9EB", 
-          dark: "#D3D5D9",
+          light: "#E8E9EB",
+          DEFAULT: "#D3D5D9", 
+          dark: "#B8BCC2",
         },
       },
       fontFamily: {
