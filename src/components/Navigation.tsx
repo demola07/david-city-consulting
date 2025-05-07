@@ -1,4 +1,3 @@
-
 import * as React from 'react';
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, NavigationMenuContent } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -91,79 +90,81 @@ const Navigation = () => {
 
   const DesktopNav = () => (
     <NavigationMenu className={`fixed top-0 left-0 right-0 z-50 ${getNavBackground()} text-white`}>
-      <div className="w-full h-16 flex items-center justify-between gap-6 px-4 lg:px-8">
-        <Link to="/" className="flex items-center space-x-3 group">
-          <img 
-            src="/images/logo1.png" 
-            alt="David City Consulting Firm Logo" 
-            className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
-          />
-          <span className="font-bold text-xl text-white">
-            David City Consulting
-          </span>
-        </Link>
-        
-        <div className="flex-1 flex items-center justify-end gap-6">
-          <NavigationMenuList className="flex items-center gap-6">
-            <NavigationMenuItem>
-              <NavigationMenuTrigger 
-                className="group flex items-center gap-2 text-white hover:text-white/80 transition-colors duration-200"
-              >
-                <Globe className="w-4 h-4 text-white" />
-                Study Destinations
-                <ChevronDown className="w-4 h-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <div className="w-[600px] bg-white rounded-xl shadow-lg border border-gray-100">
-                  <div className="p-4 border-b">
-                    <h3 className="font-semibold text-gray-900">Popular Study Destinations</h3>
-                    <p className="text-sm text-gray-500">Choose your ideal study destination</p>
+      <div className="w-full h-16 flex items-center justify-between px-4 lg:px-8">
+        <div className="container mx-auto flex items-center justify-between">
+          <Link to="/" className="flex items-center space-x-3 group">
+            <img 
+              src="/images/logo1.png" 
+              alt="David City Consulting Firm Logo" 
+              className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
+            />
+            <span className="font-bold text-xl text-white">
+              David City Consulting
+            </span>
+          </Link>
+          
+          <div className="flex items-center justify-end gap-6">
+            <NavigationMenuList className="flex items-center gap-6">
+              <NavigationMenuItem>
+                <NavigationMenuTrigger 
+                  className="group flex items-center gap-2 text-white hover:text-white/80 transition-colors duration-200"
+                >
+                  <Globe className="w-4 h-4 text-white" />
+                  Study Destinations
+                  <ChevronDown className="w-4 h-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="w-[600px] bg-white rounded-xl shadow-lg border border-gray-100">
+                    <div className="p-4 border-b">
+                      <h3 className="font-semibold text-gray-900">Popular Study Destinations</h3>
+                      <p className="text-sm text-gray-500">Choose your ideal study destination</p>
+                    </div>
+                    <DestinationsList />
                   </div>
-                  <DestinationsList />
-                </div>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
 
-            <NavigationMenuItem>
-              <Link 
-                to="/about-us"
-                className="flex items-center gap-2 text-white hover:text-white/80 transition-colors duration-200"
-              >
-                <BookOpenText className="w-4 h-4" />
-                About Us
-              </Link>
-            </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Link 
+                  to="/about-us"
+                  className="flex items-center gap-2 text-white hover:text-white/80 transition-colors duration-200"
+                >
+                  <BookOpenText className="w-4 h-4" />
+                  About Us
+                </Link>
+              </NavigationMenuItem>
 
-            <NavigationMenuItem>
-              <Link 
-                to="/tourism-conferences"
-                className="flex items-center gap-2 text-white hover:text-white/80 transition-colors duration-200"
-              >
-                <Globe className="w-4 h-4" />
-                Tourism & Conferences
-              </Link>
-            </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Link 
+                  to="/tourism-conferences"
+                  className="flex items-center gap-2 text-white hover:text-white/80 transition-colors duration-200"
+                >
+                  <Globe className="w-4 h-4" />
+                  Tourism & Conferences
+                </Link>
+              </NavigationMenuItem>
 
-            <NavigationMenuItem>
-              <Link 
-                to="/tutorials"
-                className="flex items-center gap-2 text-white hover:text-white/80 transition-colors duration-200"
-              >
-                <BookOpen className="w-4 h-4" />
-                Tutorials
-              </Link>
-            </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Link 
+                  to="/tutorials"
+                  className="flex items-center gap-2 text-white hover:text-white/80 transition-colors duration-200"
+                >
+                  <BookOpen className="w-4 h-4" />
+                  Tutorials
+                </Link>
+              </NavigationMenuItem>
 
-            <NavigationMenuItem>
-              <Link 
-                to="/pricing"
-                className="flex items-center gap-2 text-white hover:text-white/80 transition-colors duration-200"
-              >
-                <Receipt className="w-4 h-4" />
-                Pricing
-              </Link>
-            </NavigationMenuItem>
-          </NavigationMenuList>
+              <NavigationMenuItem>
+                <Link 
+                  to="/pricing"
+                  className="flex items-center gap-2 text-white hover:text-white/80 transition-colors duration-200"
+                >
+                  <Receipt className="w-4 h-4" />
+                  Pricing
+                </Link>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </div>
         </div>
       </div>
     </NavigationMenu>

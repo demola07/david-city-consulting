@@ -236,9 +236,14 @@ const Pricing = () => {
           <p className="font-bold text-gray-900">DAVID CITY CONSULTING FIRM</p>
         </div>
         <div className="mt-6 text-center">
-          <Button className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-8 py-2">
-            Contact Us For More Information
-          </Button>
+          <a 
+            href="https://wa.me/2348077157332"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-8 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-lg font-medium shadow-md transition-colors duration-200"
+          >
+            Contact Us on WhatsApp
+          </a>
         </div>
       </motion.div>
     </div>

@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
         </p>
         
         <p className="text-xs mt-4">
-          &copy; {new Date().getFullYear()} David City Consulting Firm. All rights reserved.
+          &copy; {new Date().getFullYear()} David City Consulting Firm <span className="font-bold">Ltd</span>. All rights reserved.
         </p>
       </div>
     </footer>

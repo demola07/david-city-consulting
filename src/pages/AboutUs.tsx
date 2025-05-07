@@ -1,19 +1,53 @@
-
 import * as React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
 
 const AboutUs = () => {
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()]);
+
   return (
     <div className="container max-w-5xl mx-auto py-12 px-4 md:px-6">
       <div className="space-y-6 animate-fade-in">
-        {/* Hero Section */}
-        <div className="text-center space-y-4 mb-10">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900">About David City Consulting Firm</h1>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            A passion-driven organization helping students and professionals achieve their global aspirations
-          </p>
-          <Separator className="mt-6 mx-auto w-24 bg-purple-500 h-1" />
+        {/* Hero Section with Carousel */}
+        <div className="relative rounded-xl overflow-hidden mb-10">
+          <div className="embla" ref={emblaRef}>
+            <div className="embla__container flex">
+              <div className="embla__slide flex-[0_0_100%] min-w-0">
+                <img 
+                  src="/images/hero/hero2.jpg" 
+                  alt="Hero Image 1" 
+                  className="w-full h-[400px] object-cover"
+                />
+              </div>
+              <div className="embla__slide flex-[0_0_100%] min-w-0">
+                <img 
+                  src="/images/hero/hero4.jpg" 
+                  alt="Hero Image 2" 
+                  className="w-full h-[400px] object-cover"
+                />
+              </div>
+              <div className="embla__slide flex-[0_0_100%] min-w-0">
+                <img 
+                  src="/images/hero/hero6.jpg" 
+                  alt="Hero Image 3" 
+                  className="w-full h-[400px] object-cover"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70 flex items-center justify-center">
+            <div className="text-center space-y-4 px-4">
+              <h1 className="text-3xl md:text-4xl font-bold text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
+                About David City Consulting Firm
+              </h1>
+              <p className="text-lg text-white/95 max-w-3xl mx-auto drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
+                A passion-driven organization helping students and professionals achieve their global aspirations
+              </p>
+              <Separator className="mt-6 mx-auto w-24 bg-white h-1" />
+            </div>
+          </div>
         </div>
 
         {/* Our Story */}
@@ -119,12 +153,14 @@ const AboutUs = () => {
         <div className="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg p-8 text-center mt-12">
           <h2 className="text-2xl font-bold text-white mb-4">Ready to Begin Your Journey?</h2>
           <p className="text-white opacity-90 mb-6">Contact us today to learn more about how we can help you achieve your goals.</p>
-          <button 
-            className="px-6 py-3 bg-white text-purple-700 rounded-lg font-medium shadow-md hover:bg-gray-100 transition-colors duration-200"
-            onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })}
+          <a 
+            href="https://wa.me/2348077157332"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-6 py-3 bg-white text-purple-700 rounded-lg font-medium shadow-md hover:bg-gray-100 transition-colors duration-200"
           >
-            Contact Us
-          </button>
+            Contact Us on WhatsApp
+          </a>
         </div>
       </div>
     </div>

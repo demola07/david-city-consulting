@@ -1,4 +1,3 @@
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
@@ -109,7 +108,7 @@ const Hero = () => {
                   alt={`Hero background ${index + 1}`}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/80" />
               </div>
             </SwiperSlide>
           ))}
@@ -142,16 +141,16 @@ const Hero = () => {
           </motion.div>
           
           <motion.h1 
-            className="text-5xl md:text-7xl font-bold text-white mb-8 drop-shadow-lg leading-tight"
+            className="text-5xl md:text-7xl font-bold text-white mb-8 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] leading-tight"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
           >
-            Global Education <span className="text-[#8B5CF6]">&</span> Tourism at its Peak
+            Global Education <span className="text-[#8B5CF6] drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">&</span> Tourism at its Peak
           </motion.h1>
           
           <motion.p 
-            className="text-xl md:text-2xl text-white/90 mb-10 leading-relaxed max-w-2xl mx-auto"
+            className="text-xl md:text-2xl text-white mb-10 leading-relaxed max-w-2xl mx-auto drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.5 }}
@@ -168,7 +167,7 @@ const Hero = () => {
             <Button 
               size="lg"
               onClick={scrollToServices}
-              className="bg-[#8B5CF6] hover:bg-[#7C3AED] text-white px-8 py-6 text-lg font-semibold rounded-lg shadow-xl transition-all hover:translate-y-[-2px]"
+              className="bg-[#8B5CF6] hover:bg-[#7C3AED] text-white px-8 py-6 text-lg font-semibold rounded-lg shadow-xl transition-all hover:translate-y-[-2px] drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
             >
               Get Started
               <ArrowDown className="ml-2 h-5 w-5" />
@@ -177,7 +176,7 @@ const Hero = () => {
               href="https://forms.gle/zbwtdTnGrh1HQJj17" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white text-white hover:bg-white/20 px-8 py-6 text-lg font-semibold transition-all h-[52px]"
+              className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white text-white hover:bg-white/20 px-8 py-6 text-lg font-semibold transition-all h-[52px] drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
             >
               Become a Tutor
               <ExternalLink className="h-5 w-5" />
