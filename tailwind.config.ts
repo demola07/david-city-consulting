@@ -36,6 +36,11 @@ export default {
           DEFAULT: "#f8f9fa",
           hover: "#e9ecef",
         },
+        ash: {
+          light: "#F1F1F1",
+          DEFAULT: "#E8E9EB", 
+          dark: "#D3D5D9",
+        },
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"],
