@@ -1,5 +1,5 @@
 
-import { Whatsapp, MessageCircle } from "lucide-react";
+import { MessageSquare } from "lucide-react";
 import { motion } from "framer-motion";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
@@ -27,7 +27,24 @@ const FloatingContactButtons = () => {
               className="bg-[#25D366] hover:bg-[#128C7E] text-white p-3 rounded-full shadow-lg flex items-center justify-center transition-transform hover:scale-110"
               aria-label="Contact us on WhatsApp"
             >
-              <Whatsapp size={24} />
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                width="24" 
+                height="24" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="currentColor" 
+                strokeWidth="2" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+              >
+                <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />
+                <path d="M9 10a.5.5 0 0 1 1 0v4a.5.5 0 0 1-1 0v-4Z" />
+                <path d="M14 10a.5.5 0 0 1 1 0v4a.5.5 0 0 1-1 0v-4Z" />
+                <path d="M9 6.5h6" />
+                <path d="M11 18h2" />
+                <path d="m16 7-4-5-4 5" />
+              </svg>
             </a>
           </TooltipTrigger>
           <TooltipContent side="left">
@@ -45,7 +62,7 @@ const FloatingContactButtons = () => {
               className="bg-[#0088cc] hover:bg-[#0077b5] text-white p-3 rounded-full shadow-lg flex items-center justify-center transition-transform hover:scale-110"
               aria-label="Contact us on Telegram"
             >
-              <MessageCircle size={24} />
+              <MessageSquare size={24} />
             </a>
           </TooltipTrigger>
           <TooltipContent side="left">
