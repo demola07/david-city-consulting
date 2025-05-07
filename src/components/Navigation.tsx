@@ -4,7 +4,7 @@ import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuL
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { Link, useLocation } from "react-router-dom";
-import { GraduationCap, Globe, BookOpen, Menu, ChevronDown, BookOpenText } from "lucide-react";
+import { GraduationCap, Globe, BookOpen, Menu, ChevronDown, BookOpenText, Receipt } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const destinations = [
@@ -59,6 +59,8 @@ const Navigation = () => {
       return 'bg-gradient-to-r from-teal-500 to-emerald-500';
     } else if (location.pathname === '/about-us') {
       return 'bg-gradient-to-r from-blue-600 to-violet-600';
+    } else if (location.pathname === '/pricing') {
+      return 'bg-gradient-to-r from-purple-600 to-blue-500';
     }
     return 'bg-gradient-to-r from-purple-600 to-indigo-600'; // Default color
   };
@@ -151,6 +153,16 @@ const Navigation = () => {
                 Tutorials
               </Link>
             </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <Link 
+                to="/pricing"
+                className="flex items-center gap-2 text-white hover:text-white/80 transition-colors duration-200"
+              >
+                <Receipt className="w-4 h-4" />
+                Pricing
+              </Link>
+            </NavigationMenuItem>
           </NavigationMenuList>
         </div>
       </div>
@@ -217,6 +229,15 @@ const Navigation = () => {
                       >
                         <BookOpen className="w-4 h-4" />
                         <span>Tutorials</span>
+                      </Link>
+                      
+                      <Link 
+                        to="/pricing"
+                        onClick={handleNavigation}
+                        className="flex items-center space-x-2 w-full p-3 font-medium text-gray-700 rounded-lg hover:bg-purple-50 hover:text-purple-500 transition-colors duration-200"
+                      >
+                        <Receipt className="w-4 h-4" />
+                        <span>Pricing</span>
                       </Link>
                     </div>
                   </div>

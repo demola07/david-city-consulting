@@ -19,6 +19,7 @@ import Login from "./pages/admin/Login";
 import TutorialManagement from "./pages/admin/TutorialManagement";
 import CanadaStudy from "./pages/study/CanadaStudy";
 import AboutUs from "./pages/AboutUs";
+import Pricing from "./pages/Pricing";
 import FloatingContactButtons from "./components/FloatingContactButtons";
 
 const queryClient = new QueryClient();
@@ -43,6 +44,7 @@ const App = () => (
               <Route path="/tourism-conferences" element={<TourismConferences />} />
               <Route path="/tutorials" element={<TutorialsPage />} />
               <Route path="/about-us" element={<AboutUs />} />
+              <Route path="/pricing" element={<Pricing />} />
               
               {/* Admin Routes */}
               <Route path="/admin/login" element={<Login />} />
