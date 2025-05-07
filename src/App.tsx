@@ -1,3 +1,4 @@
+
 import { StrictMode } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -17,6 +18,7 @@ import AdminLayout from "./pages/admin/AdminLayout";
 import Login from "./pages/admin/Login";
 import TutorialManagement from "./pages/admin/TutorialManagement";
 import CanadaStudy from "./pages/study/CanadaStudy";
+import AboutUs from "./pages/AboutUs";
 
 const queryClient = new QueryClient();
 
@@ -39,6 +41,7 @@ const App = () => (
               <Route path="/study/canada" element={<CanadaStudy />} />
               <Route path="/tourism-conferences" element={<TourismConferences />} />
               <Route path="/tutorials" element={<TutorialsPage />} />
+              <Route path="/about-us" element={<AboutUs />} />
               
               {/* Admin Routes */}
               <Route path="/admin/login" element={<Login />} />

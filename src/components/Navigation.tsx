@@ -1,9 +1,10 @@
+
 import * as React from 'react';
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, NavigationMenuContent } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { Link, useLocation } from "react-router-dom";
-import { GraduationCap, Globe, BookOpen, Menu, ChevronDown } from "lucide-react";
+import { GraduationCap, Globe, BookOpen, Menu, ChevronDown, BookOpenText } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const destinations = [
@@ -56,6 +57,8 @@ const Navigation = () => {
       return 'bg-gradient-to-r from-orange-500 to-pink-500';
     } else if (location.pathname === '/tutorials') {
       return 'bg-gradient-to-r from-teal-500 to-emerald-500';
+    } else if (location.pathname === '/about-us') {
+      return 'bg-gradient-to-r from-blue-600 to-violet-600';
     }
     return 'bg-gradient-to-r from-purple-600 to-indigo-600'; // Default color
   };
@@ -121,6 +124,16 @@ const Navigation = () => {
 
             <NavigationMenuItem>
               <Link 
+                to="/about-us"
+                className="flex items-center gap-2 text-white hover:text-white/80 transition-colors duration-200"
+              >
+                <BookOpenText className="w-4 h-4" />
+                About Us
+              </Link>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <Link 
                 to="/tourism-conferences"
                 className="flex items-center gap-2 text-white hover:text-white/80 transition-colors duration-200"
               >
@@ -179,6 +192,15 @@ const Navigation = () => {
                   <div className="space-y-4">
                     <h3 className="text-sm font-medium text-gray-500">Other Services</h3>
                     <div className="space-y-2">
+                      <Link 
+                        to="/about-us"
+                        onClick={handleNavigation}
+                        className="flex items-center space-x-2 w-full p-3 font-medium text-gray-700 rounded-lg hover:bg-blue-50 hover:text-blue-500 transition-colors duration-200"
+                      >
+                        <BookOpenText className="w-4 h-4" />
+                        <span>About Us</span>
+                      </Link>
+                    
                       <Link 
                         to="/tourism-conferences"
                         onClick={handleNavigation}
