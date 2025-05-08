@@ -28,13 +28,6 @@ const Pricing = () => {
     },
   ];
 
-  const passportServices = [
-    { validity: "5 years", type: "New/renewals fast track", price: "₦108,500" },
-    { validity: "5 years", type: "New/Renewal normal time", price: "₦90,500" },
-    { validity: "10 years", type: "New/Renewal fast track", price: "₦165,400" },
-    { validity: "10 years", type: "New/Renewal normal time", price: "₦139,500" },
-  ];
-
   const otherServices = [
     { service: "IELTS CLASSES", price: "$125" },
     { service: "Online Bible Club for children in Diaspora", price: "$40 monthly" },
@@ -152,42 +145,8 @@ const Pricing = () => {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16"
+        className="grid grid-cols-1 gap-8 mb-16"
       >
-        {/* Passport Services Card */}
-        <motion.div variants={itemVariants} className="col-span-1">
-          <Card className="h-full bg-gradient-to-br from-white to-teal-50 border-teal-100 shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <CardHeader className="pb-4 bg-gradient-to-r from-teal-500 to-emerald-500 text-white rounded-t-lg">
-              <CardTitle className="text-2xl font-bold">International Passport Processing</CardTitle>
-            </CardHeader>
-            <CardContent className="pt-6">
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>Validity</TableHead>
-                    <TableHead>Type</TableHead>
-                    <TableHead>Price</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {passportServices.map((service, index) => (
-                    <TableRow key={index}>
-                      <TableCell className="font-medium">{service.validity}</TableCell>
-                      <TableCell>{service.type}</TableCell>
-                      <TableCell className="font-bold text-teal-600">{service.price}</TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </CardContent>
-            <CardFooter>
-              <p className="text-sm text-gray-500">
-                * Prices are tentative and subject to change
-              </p>
-            </CardFooter>
-          </Card>
-        </motion.div>
-
         {/* Other Services Card */}
         <motion.div variants={itemVariants} className="col-span-1">
           <Card className="h-full bg-gradient-to-br from-white to-blue-50 border-blue-100 shadow-lg hover:shadow-xl transition-shadow duration-300">
