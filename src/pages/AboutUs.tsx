@@ -40,10 +40,10 @@ const AboutUs = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70 flex items-center justify-center">
             <div className="text-center space-y-4 px-4">
               <h1 className="text-3xl md:text-4xl font-bold text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
-                About David City Consulting Firm
+                About David City Consulting Firm.
               </h1>
               <p className="text-lg text-white/95 max-w-3xl mx-auto drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
-                A passion-driven organization helping students and professionals achieve their global aspirations
+                A passion-driven organization helping students and professionals achieve their global aspirations.
               </p>
               <Separator className="mt-6 mx-auto w-24 bg-white h-1" />
             </div>
