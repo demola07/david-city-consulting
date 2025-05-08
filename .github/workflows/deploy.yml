@@ -1,3 +1,4 @@
+
 name: Deploy to Vercel
 
 on:
@@ -33,6 +34,9 @@ jobs:
 
       - name: Build project
         run: npm run build
+
+      - name: Remove Zone.Identifier files
+        run: find ./dist -name "*:Zone.Identifier" -type f -delete || true
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
