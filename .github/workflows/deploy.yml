@@ -3,9 +3,9 @@ name: Deploy to Vercel
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, master ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, master ]
 
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
@@ -48,7 +48,8 @@ jobs:
     name: Deploy to Vercel
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    # Modify the condition to check for both 'main' and 'master' branches
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
 
     steps:
       - name: Checkout repository
@@ -66,8 +67,16 @@ jobs:
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 
-      - name: Build Project Artifacts
-        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+      # Debugging step to check environment
+      - name: Debug information
+        run: |
+          echo "Current branch: ${{ github.ref }}"
+          echo "Vercel Project ID: ${{ env.VERCEL_PROJECT_ID }}"
+          ls -la dist/
+
+      # Skip the Build Step since we've already built the project
+      - name: Skip Build Step in Vercel
+        run: echo '{"version":2,"builds":[]}' > vercel.json
 
       - name: Deploy Project Artifacts to Vercel
-        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }} 
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
