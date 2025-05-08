@@ -48,7 +48,6 @@ jobs:
     name: Deploy to Vercel
     needs: build
     runs-on: ubuntu-latest
-    # Modify the condition to check for both 'main' and 'master' branches
     if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
 
     steps:
@@ -67,16 +66,25 @@ jobs:
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 
-      # Debugging step to check environment
+      # Debug information
       - name: Debug information
         run: |
           echo "Current branch: ${{ github.ref }}"
           echo "Vercel Project ID: ${{ env.VERCEL_PROJECT_ID }}"
           ls -la dist/
-
-      # Skip the Build Step since we've already built the project
-      - name: Skip Build Step in Vercel
-        run: echo '{"version":2,"builds":[]}' > vercel.json
-
+      
+      # This step properly builds the Vercel output structure
+      - name: Create Vercel output structure
+        run: |
+          # Create the necessary .vercel/output directory structure
+          mkdir -p .vercel/output/static
+          
+          # Copy the static files from dist to .vercel/output/static
+          cp -r dist/* .vercel/output/static/
+          
+          # Create the config.json file needed for prebuilt deployment
+          echo '{"version":3,"routes":[{"handle":"filesystem"},{"src":"/(.*)", "dest":"/"}]}' > .vercel/output/config.json
+      
+      # Remove the now-obsolete vercel.json
       - name: Deploy Project Artifacts to Vercel
         run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
