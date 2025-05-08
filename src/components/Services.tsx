@@ -314,7 +314,7 @@ const Services = () => {
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
-                  </Button>
+                    </Button>
                 </a>
               )}
 
@@ -363,7 +363,7 @@ const Services = () => {
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
-                  </Button>
+                    </Button>
                 </a>
               )}
 
@@ -386,7 +386,7 @@ const Services = () => {
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
-                  </Button>
+                    </Button>
                 </a>
               )}
             </motion.div>
