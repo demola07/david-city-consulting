@@ -8,7 +8,7 @@ const CyprusStudy = () => {
       <div className="relative h-[60vh] overflow-hidden">
         <img
           // Replace with a relevant Cyprus image URL if available
-          src="https://images.unsplash.com/photo-1589098165169-c54f1a7650c1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+          src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b"
           alt="Cyprus Coastal University View" // Updated Alt Text
           className="w-full h-full object-cover"
         />
