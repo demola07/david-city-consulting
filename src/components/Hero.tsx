@@ -1,3 +1,4 @@
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
@@ -19,7 +20,7 @@ const HERO_IMAGES = [
   '/images/hero/hero6.jpg'
 ];
 
-// Add custom styles for the navigation arrows
+// Add custom styles for the navigation arrows with improved visibility
 const customSwiperStyles = `
   .hero-swiper .swiper-button-next,
   .hero-swiper .swiper-button-prev {
@@ -31,7 +32,7 @@ const customSwiperStyles = `
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 20;
+    z-index: 50;
     transition: all 0.3s ease;
   }
   
@@ -87,14 +88,9 @@ const Hero = () => {
             delay: 5000,
             disableOnInteraction: false,
           }}
-          navigation={{
-            enabled: true,
-            prevEl: '.swiper-button-prev',
-            nextEl: '.swiper-button-next',
-          }}
+          navigation={true}
           pagination={{ 
             clickable: true,
-            el: '.swiper-pagination'
           }}
           grabCursor={true}
           simulateTouch={true}
@@ -112,13 +108,6 @@ const Hero = () => {
               </div>
             </SwiperSlide>
           ))}
-          
-          {/* Explicitly add navigation buttons */}
-          <div className="swiper-button-prev"></div>
-          <div className="swiper-button-next"></div>
-          
-          {/* Explicitly add pagination */}
-          <div className="swiper-pagination"></div>
         </Swiper>
       </div>
       
