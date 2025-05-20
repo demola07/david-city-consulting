@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const Pricing = () => {
   const studyServices = [
-    { destination: "Canada 🇨🇦", price: "$900", details: "Study route" },
+    { destination: "Canada", price: "$900", details: "Study route" },
     { destination: "United States of America", price: "$900", details: "Study route" },
     { destination: "United Kingdom", price: "$350", details: "Study route" },
     { 
