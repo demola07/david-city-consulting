@@ -1,4 +1,3 @@
-
 import { Phone, Mail, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -52,7 +51,7 @@ const Contact = () => {
                   Lagos-Ibadan Expressway, Ogun State.
                 </p>
                 <a 
-                  href="https://maps.app.goo.gl/MzLnxdMTqgbvmCvN7" 
+                  href="https://www.google.com/maps?q=6.6871,3.2727&q=Redemption+Camp+KM+46+Lagos-Ibadan+Expressway&ll=6.6871,3.2727&z=15" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center mt-2 text-primary hover:text-primary/80 transition-colors text-sm font-medium"
