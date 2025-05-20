@@ -1,3 +1,4 @@
+
 import { Phone, Mail, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -45,13 +46,11 @@ const Contact = () => {
               <div>
                 <h3 className="text-lg font-semibold mb-1">Address</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  The Work & Interact Zone, Dare Adeboye Innovation Hub - DAIH,<br />
-                  Abiona Street By House of Favour,<br />
-                  Main Gate Redemption City KM46,<br />
-                  Lagos-Ibadan Expressway, Ogun State.
+                  RC3X+373, Loburo 110113, Ogun State<br />
+                  Located at: Lagos - Ibadan Expy, Pakuro 110113, Ogun State
                 </p>
                 <a 
-                  href="https://www.google.com/maps?q=6.6871,3.2727&q=Redemption+Camp+KM+46+Lagos-Ibadan+Expressway&ll=6.6871,3.2727&z=15" 
+                  href="https://maps.app.goo.gl/QY7K7QLaiq2cUTKr5" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center mt-2 text-primary hover:text-primary/80 transition-colors text-sm font-medium"
