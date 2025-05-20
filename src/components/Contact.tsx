@@ -10,7 +10,7 @@ const Contact = () => {
           <h2 className="text-3xl md:text-4xl font-bold mt-2">Contact Us</h2>
         </div>
         
-        <div className="max-w-2xl mx-auto"> 
+        <div className="max-w-3xl mx-auto"> 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -44,7 +44,20 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="text-lg font-semibold mb-1">Address</h3>
-                <p className="text-gray-600">Lagos, Nigeria</p>
+                <p className="text-gray-600 leading-relaxed">
+                The Work &interact zone, Dare Adeboye Innovation Hub - DAIH, Abiona Street By House of Favour, Main Gate Redemption City KM46, Lagos-Ibadan Expressway, Ogun State
+                </p>
+                <a 
+                  href="https://www.google.com/maps?q=RC3X%2B373+Loburo+110113+Ogun+State&q=Lagos+-+Ibadan+Expy+Pakuro+110113+Ogun+State" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center mt-2 text-primary hover:text-primary/80 transition-colors text-sm font-medium"
+                >
+                  <span>View on Google Maps</span>
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
               </div>
             </div>
           </motion.div>
