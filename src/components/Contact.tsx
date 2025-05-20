@@ -1,4 +1,3 @@
-
 import { Phone, Mail, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -46,11 +45,10 @@ const Contact = () => {
               <div>
                 <h3 className="text-lg font-semibold mb-1">Address</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  RC3X+373, Loburo 110113, Ogun State<br />
-                  Located at: Lagos - Ibadan Expy, Pakuro 110113, Ogun State
+                The Work &interact zone, Dare Adeboye Innovation Hub - DAIH, Abiona Street By House of Favour, Main Gate Redemption City KM46, Lagos-Ibadan Expressway, Ogun State
                 </p>
                 <a 
-                  href="https://maps.app.goo.gl/QY7K7QLaiq2cUTKr5" 
+                  href="https://www.google.com/maps?q=RC3X%2B373+Loburo+110113+Ogun+State&q=Lagos+-+Ibadan+Expy+Pakuro+110113+Ogun+State" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center mt-2 text-primary hover:text-primary/80 transition-colors text-sm font-medium"
