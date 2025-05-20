@@ -1,3 +1,4 @@
+
 import { Phone, Mail, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -10,7 +11,7 @@ const Contact = () => {
           <h2 className="text-3xl md:text-4xl font-bold mt-2">Contact Us</h2>
         </div>
         
-        <div className="max-w-2xl mx-auto"> 
+        <div className="max-w-3xl mx-auto"> 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -44,7 +45,39 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="text-lg font-semibold mb-1">Address</h3>
-                <p className="text-gray-600">Lagos, Nigeria</p>
+                <p className="text-gray-600 leading-relaxed">
+                  The Work & Interact Zone, Dare Adeboye Innovation Hub - DAIH,<br />
+                  Abiona Street By House of Favour,<br />
+                  Main Gate Redemption City KM46,<br />
+                  Lagos-Ibadan Expressway, Ogun State.
+                </p>
+                <a 
+                  href="https://maps.app.goo.gl/Yrjz1233orfCBZXBA" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center mt-2 text-primary hover:text-primary/80 transition-colors text-sm font-medium"
+                >
+                  <span>View on Google Maps</span>
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div className="pt-4 mt-4 border-t border-gray-100">
+              <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.0724380576384!2d3.4156456!3d6.634827699999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b93f2c0263485%3A0x2c02a5c1d2e11d7a!2sRedemption%20Camp!5e0!3m2!1sen!2sng!4v1716223491314!5m2!1sen!2sng" 
+                  width="100%" 
+                  height="300" 
+                  style={{ border: 0 }} 
+                  allowFullScreen 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="rounded-lg shadow-sm"
+                  title="Google Maps Location of David City Consulting"
+                ></iframe>
               </div>
             </div>
           </motion.div>
