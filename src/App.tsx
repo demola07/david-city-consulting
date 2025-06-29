@@ -20,6 +20,7 @@ import TutorialManagement from "./pages/admin/TutorialManagement";
 import CanadaStudy from "./pages/study/CanadaStudy";
 import AboutUs from "./pages/AboutUs";
 import Pricing from "./pages/Pricing";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import FloatingContactButtons from "./components/FloatingContactButtons";
 
 const queryClient = new QueryClient();
@@ -45,6 +46,7 @@ const App = () => (
               <Route path="/tutorials" element={<TutorialsPage />} />
               <Route path="/about-us" element={<AboutUs />} />
               <Route path="/pricing" element={<Pricing />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               
               {/* Admin Routes */}
               <Route path="/admin/login" element={<Login />} />
