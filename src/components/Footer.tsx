@@ -1,4 +1,6 @@
+
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   return (
@@ -11,6 +13,15 @@ const Footer: React.FC = () => {
           We operate virtually but schedule physical appointments when necessary.
         </p>
         
+        <div className="mb-4">
+          <Link 
+            to="/privacy-policy" 
+            className="text-sm text-gray-400 hover:text-white transition-colors duration-200 underline"
+          >
+            Privacy Policy
+          </Link>
+        </div>
+        
         <p className="text-xs mt-4">
           &copy; {new Date().getFullYear()} David City Consulting Firm <span className="font-bold">Ltd</span>. All rights reserved.
         </p>
@@ -19,4 +30,4 @@ const Footer: React.FC = () => {
   );
 };
 
-export default Footer; 
+export default Footer;
